@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import Home from './pages/Home';
+import Home from './pages/Home';
 // import AllProducts from './pages/AllProducts';
 // import Tea from './pages/Tea';
 // import Accessories from './pages/Accessories';
@@ -20,18 +20,18 @@ function App() {
       <Router>
           <Navbar />
         <Routes>
-          {/*<Route path="/all-products" component={AllProducts} />*/}
-          {/*<Route path="/tea" component={Tea} />*/}
-          {/*<Route path="/accessories" component={Accessories} />*/}
-          {/*<Route path="/pages/contact-us" component={ContactUs} />*/}
-          {/*<Route path="/pages/shipping-returns" component={ShippingReturns} />*/}
-          {/*<Route path="/pages/privacy-policy" component={PrivacyPolicy} />*/}
-          {/*<Route path="/pages/terms-conditions" component={TermsConditions} />*/}
-          {/*<Route path="/products/:id" component={Product} />*/}
-          {/*<Route path="/pages/story" component={Story} />*/}
-          {/*<Route path="/pages/packaging" component={Packaging} />*/}
-          {/*<Route path="/pages/planet" component={Planet} />*/}
-          {/*<Route path="/" component={Home} />*/}
+          {/*<Route path="/all-products" Component={AllProducts} />*/}
+          {/*<Route path="/tea" Component={Tea} />*/}
+          {/*<Route path="/accessories" Component={Accessories} />*/}
+          {/*<Route path="/pages/contact-us" Component={ContactUs} />*/}
+          {/*<Route path="/pages/shipping-returns" Component={ShippingReturns} />*/}
+          {/*<Route path="/pages/privacy-policy" Component={PrivacyPolicy} />*/}
+          {/*<Route path="/pages/terms-conditions" Component={TermsConditions} />*/}
+          {/*<Route path="/products/:id" Component={Product} />*/}
+          {/*<Route path="/pages/story" Component={Story} />*/}
+          {/*<Route path="/pages/packaging" Component={Packaging} />*/}
+          {/*<Route path="/pages/planet" Component={Planet} />*/}
+          <Route path="/" Component={Home} />
         </Routes>
       </Router>
   );
