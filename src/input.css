@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.displayFont {
+    font-family: bely display, sans-serif;
+    font-weight: 400;
+}
+
+.navWrapper {
+    padding: 15px 18px;
+}
+
+@media (min-width: 641px) {
+    .navWrapper {
+        padding: 18px 30px;
+    }
+}
+
+@media (min-width: 1140px) {
+    .navWrapper {
+        padding: 18px 50px;
+    }
+}
