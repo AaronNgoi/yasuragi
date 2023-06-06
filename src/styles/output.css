@@ -571,9 +571,9 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
-.mx-5 {
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
+.mx-6 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
 
 .my-2 {
@@ -626,18 +626,26 @@ video {
   background-color: rgb(34 197 94 / var(--tw-bg-opacity));
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
 .font-bold {
   font-weight: 700;
+}
+
+.tracking-widest {
+  letter-spacing: 0.1em;
 }
 
 .displayFont {
   font-family: bely display, sans-serif;
   font-weight: 400;
+}
+
+.navBar {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  position: fixed;
+  z-index: 20;
 }
 
 .navWrapper {
@@ -656,93 +664,42 @@ video {
   }
 }
 
-.carousel {
-  display: block;
-}
-
-.blk {
-  display: block;
-}
-
-.flickity-enabled {
+.HeroText{
   position: relative;
+  max-width: 94vw;
+  z-index: 30;
+  top: 35vh;
+  display: flex;
+  flex-direction: column;
+  padding: 3vh 5vw;
 }
 
-.flickity-enabled:focus {
-  outline: none;
+.HeroSubHeader{
+  font-size: 1rem;
+  line-height: 1.25rem;
 }
 
-.flickity-viewport {
-  overflow: hidden;
-  /*position: relative;*/
-  height: 100%;
+.HeroHeader{
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding-top: 1.125rem;
+  padding-bottom: 2.5rem;
 }
 
-.flickity-slider {
-  position: absolute;
-  width: 100%;
-  height:100% !important;
+.HeroButton {
+  color: #F9F4ED;
+  background-color: #545324;
+  padding: 8px 16px;
+  display: flex;
+  align-self: flex-start;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  letter-spacing: 1px;
 }
 
-/* draggable */
-
-.flickity-enabled.is-draggable {
-  -webkit-tap-highlight-color: transparent;
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-.flickity-enabled.is-draggable .flickity-viewport {
-  cursor: move;
-  cursor: grab;
-}
-
-.flickity-enabled.is-draggable .flickity-viewport.is-pointer-down {
-  cursor: grabbing;
-}
-
-/* ---- page dots ---- */
-
-.flickity-page-dots {
-  position: absolute;
-  width: 100%;
-  bottom: -250px;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  text-align: center;
-  line-height: 1;
-}
-
-.flickity-rtl .flickity-page-dots {
-  direction: rtl;
-}
-
-.flickity-page-dots .flickity-page-dot {
-  padding: 0;
-  font-size: 0;
-  width: 16px;
-  height: 16px;
-  background: transparent;
-  border-radius: 50%;
-  cursor: pointer;
-  border-width: 3px;
-  border-color: #1C150E;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-.flickity-page-dots .is-selected {
-  background: #1C150E;
-}
-
-.carousel-cell {
-  height: 100%;
-  width: 100%;
-}
-
-.carouselImage {
-  object-fit: cover;
-  width: 100%;
-  /*height: 1000px;*/
+.text-xlg{
+  font-size: 1rem;
+  line-height: 1.625rem;
 }

@@ -6,13 +6,13 @@ import CartIcon from '../assets/site/cartIcon.svg';
 
 function Navbar() {
     return (
-        <nav className=''>
+        <nav className='navBar'>
             <div className='navWrapper flex flex-row items-center align-center justify-between border-b'>
-            <div className='flex flex-row font-bold text-xl'>
-            <div className='my-2 mx-5'>
+            <div className='flex flex-row font-bold text-xlg tracking-widest'>
+            <div className='my-2 mx-6'>
                 <Link to="/all-products">SHOP</Link>
             </div>
-            <div className='my-2 mx-5'>
+            <div className='my-2 mx-6'>
                 <Link to="/pages/story">ABOUT</Link>
             </div>
             </div>
