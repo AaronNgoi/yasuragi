@@ -13,13 +13,21 @@
 
 .flickity-enabled:focus { outline: none; }
 
-.flickity-viewport {
+.main-bg .flickity-viewport {
     overflow: hidden;
     position: relative;
-    height: 90vh !important;
+    height: 94vh !important;
 }
 
-.flickity-slider {
+.news-testimonial .flickity-viewport {
+    overflow: hidden;
+    position: relative;
+    height: 150px;
+    /*width: 150px;*/
+    /*margin: auto;*/
+}
+
+.main-bg .flickity-slider {
     position: absolute;
     top: 0;
     left: 0;
@@ -28,10 +36,20 @@
     height: 100%;
 }
 
+.news-testimonial .flickity-slider {
+    position: relative;
+    height: 150px;
+    /*width: 150px;*/
+    margin: auto;
+}
+
+.news-testimonial {
+    /*width: 300px;*/
+    margin: auto;
+}
 
 
-
-.carousel-cell {
+.main-bg .carousel-cell {
     height: 100%;
     width: 100vw;
     position: absolute;
@@ -40,16 +58,36 @@
     right: 0;
 }
 
+.BrandWrapper {
+    width:150px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-.carouselImage {
+.news-testimonial .carousel-cell {
+    height: 150px;
+    width: 150px;
+    position: absolute;
+}
+
+
+.main-bg .carouselImage {
     object-fit: cover;
     object-position: center;
-    height: 90vh;
+    height: 94vh;
     width: 100vw;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
+}
+
+.news-testimonial .carouselImage {
+    /*object-fit: cover;*/
+    /*object-position: center;*/
+    height: 150px;
+    width: 150px;
+    position: absolute;
 }
 
 
@@ -76,7 +114,7 @@
 
 /* ---- page dots ---- */
 
-.flickity-page-dots {
+.main-bg .flickity-page-dots {
     position: absolute;
     /*width: 100%;*/
     bottom: 5vh;
@@ -88,6 +126,18 @@
     line-height: 1;
 }
 
+.news-testimonial .flickity-page-dots {
+    position: relative;
+    bottom: -1.875rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    width: 150px;
+    line-height: 1;
+}
+
+
 .flickity-rtl .flickity-page-dots { direction: rtl; }
 
 .flickity-page-dots .flickity-page-dot {
@@ -95,7 +145,7 @@
     font-size: 0;
     width: 16px;
     height: 16px;
-    background: transparent;
+    background-color: transparent;
     border-radius: 50%;
     cursor: pointer;
     border-width: 2px;
@@ -104,6 +154,25 @@
     margin-right: 0.5rem;
 }
 
+.news-testimonial .flickity-page-dots .flickity-page-dot {
+    padding: 0;
+    font-size: 0;
+    width: 12px;
+    height: 12px;
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    border-width: 2px;
+    border-color: #1C150E;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+
+}
+
 .flickity-page-dots .is-selected {
-    background: #1C150E;
+    background-color: #1C150E;
+}
+
+.news-testimonial .flickity-page-dots .is-selected {
+    background-color: #1C150E;
 }

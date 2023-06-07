@@ -15,6 +15,19 @@
     height: auto;
     position: fixed;
     z-index: 20;
+    background-color: transparent;
+    transition: background-color 0.4s;
+
+}
+
+.navBar:hover,
+.navBar.scrolled {
+    background-color: #FCFAF4;
+    border-bottom: solid 1px #E5E4DF;
+}
+
+.border-b {
+    border-bottom: solid 1px #E5E4DF;
 }
 
 .navWrapper {
@@ -43,6 +56,30 @@
     padding: 3vh 5vw;
 }
 
+.HeroText2{
+    position: relative;
+    max-width: 94vw;
+    z-index: 30;
+    top: 60vh;
+    display: flex;
+    flex-direction: column;
+    padding: 3vh 5vw;
+}
+
+.HeroText3{
+    position: absolute;
+    max-width: 94vw;
+    z-index: 30;
+    top: 22vh;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 3vh 5vw;
+    align-items: flex-end;
+    text-align: right;
+    color: #F9F4ED;
+}
+
 
 .HeroSubHeader{
     font-size: 1rem;
@@ -63,7 +100,18 @@
     background-color: #545324;
     padding: 8px 16px;
     display: flex;
-    align-self: flex-start;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+    align-items: center;
+}
+
+.HeroButtonEnd {
+    color: #F9F4ED;
+    background-color: #545324;
+    padding: 8px 16px;
+    display: flex;
+    align-self: flex-end;
     font-size: 0.875rem;
     line-height: 1.5rem;
     letter-spacing: 1px;
@@ -72,4 +120,70 @@
 .text-xlg{
     font-size: 1rem;
     line-height: 1.625rem;
+}
+
+.NewsImage{
+    height: 150px;
+    width: 150px;
+}
+
+@media (min-width: 1024px) {
+    .NewsImage {
+        opacity: 0.4;
+    }
+
+    .NewsImage.selected {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-hidden {
+    display: none !important;
+}
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .tablet-hidden {
+        display: none !important;
+    }
+}
+
+@media (min-width: 1025px) {
+    .desktop-hidden {
+        display: none !important;
+    }
+}
+
+.featured-collection {
+    text-align: center;
+    justify-items: center;
+}
+
+.featured-collection-images {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.featured-collection-images .featured-img {
+    width: 300px;
+    height: 300px;
+}
+
+.featured-collection-images .featured-img-0 {
+    border: 6px solid #A3A672;
+}
+
+.featured-collection-images .featured-img-1 {
+    border: 6px solid #7A7E43;
+}
+
+.featured-collection-images .featured-img-2 {
+    border: 6px solid #796E4A;
+}
+
+.darkerbg {
+    background-color: #F6EFE4;
 }

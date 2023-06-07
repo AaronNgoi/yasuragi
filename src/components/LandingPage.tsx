@@ -18,27 +18,37 @@ const LandingPage: React.FC = () => {
                 dragThreshold: 15,
                 pauseAutoPlayOnHover: false,
                 // autoPlay: 6000,
-                // imagesLoaded: true,
+                imagesLoaded: true,
                 cellSelector: '.carousel-cell',
             });
         }
     }, []);
 
     return (
-        <div ref={carouselRef} className="carousel">
+        <div ref={carouselRef} className="carousel main-bg">
             <div className="carousel-cell">
                 <img src={HeroBG1} alt="Bg Img 1" className='carouselImage'/>
                 <div className='HeroText'>
                     <div className='HeroSubHeader'>Experience the Purest Tradition with Our Ceremonial Grade Matcha</div>
                     <div className='HeroHeader'>CEREMONIAL GRADE MATCHA</div>
-                    <button className='HeroButton'> DISCOVER MORE</button>
+                    <button className='HeroButton self-start'> DISCOVER MORE</button>
                 </div>
             </div>
             <div className="carousel-cell">
                 <img src={HeroBG2} alt="Bg Img 2" className='carouselImage'/>
+                <div className='HeroText2'>
+                    <div className='HeroSubHeader'>Indulge in the Wholesome Blend of Our Powdered Genmaicha</div>
+                    <div className='HeroHeader'>POWDERED GENMAICHA</div>
+                    <button className='HeroButton self-start'> DISCOVER MORE</button>
+                </div>
             </div>
             <div className="carousel-cell">
                 <img src={HeroBG3} alt="Bg Img 3" className='carouselImage'/>
+                <div className='HeroText3'>
+                    <div className='HeroSubHeader'>Experience the Warm, Toasty Delight of Our Powdered Houjicha</div>
+                    <div className='HeroHeader'>POWDERED HOUJICHA</div>
+                    <button className='HeroButtonEnd'> DISCOVER MORE</button>
+                </div>
             </div>
         </div>
     );
