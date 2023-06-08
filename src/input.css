@@ -30,6 +30,10 @@
     border-bottom: solid 1px #E5E4DF;
 }
 
+.border-t {
+    border-top: solid 1px #E5E4DF;
+}
+
 .navWrapper {
     padding: 8px 18px;
 }
@@ -64,6 +68,12 @@
     display: flex;
     flex-direction: column;
     padding: 3vh 5vw;
+}
+
+@media (max-width: 1023px) {
+    .HeroText2 {
+        color: #F9F4ED;
+    }
 }
 
 .HeroText3{
@@ -187,3 +197,20 @@
 .darkerbg {
     background-color: #F6EFE4;
 }
+
+
+.testmargin {
+    margin-top: 8000px;
+    /*margin-top: 8px;*/
+    max-width: 50px;
+}
+
+/* Add this to your existing CSS */
+/*html {*/
+/*    overflow-y: scroll;*/
+/*}*/
+
+/* Adjust the width of the scroll bar as needed */
+/*::-webkit-scrollbar {*/
+/*    width: 10px;*/
+/*}*/

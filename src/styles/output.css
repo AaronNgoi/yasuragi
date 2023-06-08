@@ -632,10 +632,6 @@ video {
   margin-top: 3rem;
 }
 
-.mt-20 {
-  margin-top: 5rem;
-}
-
 .flex {
   display: flex;
 }
@@ -703,6 +699,18 @@ video {
   padding-bottom: 5rem;
 }
 
+.pl-14 {
+  padding-left: 3.5rem;
+}
+
+.pl-16 {
+  padding-left: 4rem;
+}
+
+.pr-16 {
+  padding-right: 4rem;
+}
+
 .pt-12 {
   padding-top: 3rem;
 }
@@ -714,6 +722,16 @@ video {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .font-bold {
@@ -760,6 +778,10 @@ video {
   border-bottom: solid 1px #E5E4DF;
 }
 
+.border-t {
+  border-top: solid 1px #E5E4DF;
+}
+
 .navWrapper {
   padding: 8px 18px;
 }
@@ -794,6 +816,12 @@ video {
   display: flex;
   flex-direction: column;
   padding: 3vh 5vw;
+}
+
+@media (max-width: 1023px) {
+  .HeroText2 {
+    color: #F9F4ED;
+  }
 }
 
 .HeroText3{
@@ -917,9 +945,39 @@ video {
   background-color: #F6EFE4;
 }
 
+.testmargin {
+  margin-top: 8000px;
+  /*margin-top: 8px;*/
+  max-width: 50px;
+}
+
+/* Add this to your existing CSS */
+
+/*html {*/
+
+/*    overflow-y: scroll;*/
+
+/*}*/
+
+/* Adjust the width of the scroll bar as needed */
+
+/*::-webkit-scrollbar {*/
+
+/*    width: 10px;*/
+
+/*}*/
+
 @media (min-width: 1024px) {
   .lg\:mb-8 {
     margin-bottom: 2rem;
+  }
+
+  .lg\:mb-12 {
+    margin-bottom: 3rem;
+  }
+
+  .lg\:mb-20 {
+    margin-bottom: 5rem;
   }
 
   .lg\:pb-24 {
