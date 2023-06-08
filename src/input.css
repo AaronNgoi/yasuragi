@@ -140,6 +140,17 @@
 @media (min-width: 1024px) {
     .NewsImage {
         opacity: 0.4;
+        cursor: pointer;
+    }
+
+    .NewsImage.selected {
+        opacity: 1;
+    }
+}
+
+@media (min-width: 1024px) {
+    .NewsImage {
+        opacity: 0.4;
     }
 
     .NewsImage.selected {
@@ -205,12 +216,24 @@
     max-width: 50px;
 }
 
-/* Add this to your existing CSS */
-/*html {*/
-/*    overflow-y: scroll;*/
-/*}*/
+.carousel-cell-wrapper {
+    position: relative;
+}
 
-/* Adjust the width of the scroll bar as needed */
-/*::-webkit-scrollbar {*/
-/*    width: 10px;*/
-/*}*/
+.carouselText {
+    position: absolute;
+    top: 50px; /* Adjust this value as needed */
+
+    text-align: center;
+}
+
+
+
+{/*<div className='carouselText'>*/}
+{/*    <div className="">*/}
+{/*        {benefits.mainText}*/}
+{/*    </div>*/}
+{/*    <div className="">*/}
+{/*        {benefits.subText}*/}
+{/*    </div>*/}
+{/*</div>*/}

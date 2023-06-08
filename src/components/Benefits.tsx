@@ -6,6 +6,12 @@ import Recycle from '../assets/site/4recycle.png';
 import Flickity from 'flickity';
 import '../styles/flickity.css';
 
+interface FlickityInstance extends Flickity {
+    selectedIndex: number;
+    off: (eventName: string, listener?: (...args: any[]) => void) => void;
+    destroy: () => void;
+}
+
 const Benefits: React.FC = () => {
 
     type BenefitType = {
@@ -16,7 +22,7 @@ const Benefits: React.FC = () => {
     };
 
     const carouselRef = useRef(null);
-    const flickityRef = useRef(null);
+    const flickityRef = useRef<FlickityInstance | null>(null);
     const [pause, setPause] = useState(false);
 
     const benefitsData: BenefitType[]  = [
@@ -47,22 +53,26 @@ const Benefits: React.FC = () => {
     ];
 
     const [selectedBenefit, setSelectedBenefit] = useState(benefitsData[0]);
+    const isMobile = () => window.innerWidth <= 1024;
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            if (!pause) {
-                setSelectedBenefit(prevState => {
-                    const currentIndex = benefitsData.findIndex(benefits => benefits.alt === prevState.alt);
-                    return benefitsData[(currentIndex + 1) % benefitsData.length];
-                });
-            }
-        }, 4000);
-        return () => clearInterval(interval);
+        // Only set interval for non-mobile devices
+        if (!isMobile()) {
+            const interval = setInterval(() => {
+                if (!pause) {
+                    setSelectedBenefit(prevState => {
+                        const currentIndex = benefitsData.findIndex(benefits => benefits.alt === prevState.alt);
+                        return benefitsData[(currentIndex + 1) % benefitsData.length];
+                    });
+                }
+            }, 4000);
+            return () => clearInterval(interval);
+        }
     }, [pause]);
 
     useEffect(() => {
         if (carouselRef.current) {
-            new Flickity(carouselRef.current, {
+                flickityRef.current = new Flickity(carouselRef.current, {
                 prevNextButtons: false,
                 setGallerySize: false,
                 adaptiveHeight: true,
@@ -72,16 +82,15 @@ const Benefits: React.FC = () => {
                 autoPlay: 4000,
                 imagesLoaded: true,
                 cellSelector: '.NewsImage',
-            });
+                }) as FlickityInstance;
 
             if (flickityRef.current) {
                 flickityRef.current.on('settle', () => {
-                    setSelectedBenefit(benefitsData[flickityRef.current?.selectedIndex]);
+                    setSelectedBenefit(benefitsData[flickityRef.current?.selectedIndex || 0]);
                 });
             }
 
             return () => {
-                // Unbind Flickity events
                 if (flickityRef.current) {
                     flickityRef.current.off('settle');
                     flickityRef.current.destroy();
@@ -95,8 +104,10 @@ const Benefits: React.FC = () => {
     };
 
     return (
-        <div className='border-b darkerbg'>
-            <div className="container mx-auto pt-12 pb-20 lg:pt-24 lg:pb-24">
+        <div className='border-b border-t darkerbg'>
+            <>
+            <div className="container mx-auto pt-12 pb-20 lg:pt-24 lg:pb-24 mobile-hidden tablet-hidden">
+                <div>
                 <div className="text-center font-bold text-2xl py-4">
                     {selectedBenefit.mainText}
                 </div>
@@ -104,11 +115,13 @@ const Benefits: React.FC = () => {
 
                     {selectedBenefit.subText}
                 </div>
-                <div className="pl-16 pr-16 flex flex-row justify-around mobile-hidden tablet-hidden">
+                </div>
+                <div>
+                <div className="pl-16 pr-16 flex flex-row justify-around ">
                     {benefitsData.map((benefit, i) => (
                         <img
                             key={i}
-                            className="carousel-cell NewsImage"
+                            className={`carousel-cell NewsImage ${benefit.alt === selectedBenefit.alt ? 'selected' : ''}`}
                             src={benefit.src}
                             alt={benefit.alt}
                             onClick={() => handleImageClick(benefit)}
@@ -117,22 +130,59 @@ const Benefits: React.FC = () => {
                         />
                     ))}
                 </div>
+                </div>
                 {/*Carousel*/}
-                <div className='BrandWrapper desktop-hidden'>
-                    <div className="relative items-center">
-                        <div className="carousel news-testimonial" ref={carouselRef}>
-                            {benefitsData.map((benefits, i) => (
-                                <img
-                                    key={i}
-                                    className="carousel-cell NewsImage"
-                                    src={benefits.src}
-                                    alt={benefits.alt}
-                                />
-                            ))}
+                {/*<div className='BrandWrapper desktop-hidden'>*/}
+                {/*    <div className="relative items-center">*/}
+                {/*        <div className="carousel news-testimonial" ref={carouselRef}>*/}
+                {/*            {benefitsData.map((benefits, i) => (*/}
+                {/*                <img*/}
+                {/*                    key={i}*/}
+                {/*                    className="carousel-cell NewsImage"*/}
+                {/*                    src={benefits.src}*/}
+                {/*                    alt={benefits.alt}*/}
+                {/*                />*/}
+                {/*            ))}*/}
+                {/*        </div>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
+            </div>
+
+
+
+
+
+                <div className="container mx-auto pt-12 pb-20 lg:pt-24 lg:pb-24 desktop-hidden">
+                    <div>
+                    </div>
+                    {/*Carousel*/}
+                    <div className='BrandWrapper desktop-hidden'>
+                        <div className="relative items-center">
+                            <div className="carousel news-testimonial" ref={carouselRef}>
+                                {benefitsData.map((benefits, i) => (
+                                    <div className='carousel-cell NewsImage'>
+                                    <img
+                                        key={i}
+                                        className=""
+                                        src={benefits.src}
+                                        alt={benefits.alt}
+                                    />
+                                        <div className='carouselText'>
+                                            <div className="">
+                                                {benefits.mainText}
+                                            </div>
+                                            <div className="">
+
+                                                {benefits.subText}
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </>
         </div>
     );
 };

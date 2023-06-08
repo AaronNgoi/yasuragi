@@ -9,9 +9,16 @@ import NaturalHealth from '../assets/site/naturalhealth.png';
 import Flickity from 'flickity';
 import '../styles/flickity.css';
 
+
+type NewsType = {
+    src: string;
+    alt: string;
+};
+
 const News: React.FC = () => {
 
     const carouselRef = useRef(null);
+    const [pause, setPause] = useState(false);
 
     const newsData = [
         { src: Elle, alt: "Elle"},
@@ -21,17 +28,23 @@ const News: React.FC = () => {
         { src: MarieClaire, alt: "Marie Claire" },
     ];
 
-    const [selectedNews, setSelectedNews] = useState(newsData[0]);
+    const [selectedNews, setSelectedNews] = useState<NewsType>(newsData[0]);
+
+    const handleImageClick = (news: NewsType) => {
+        setSelectedNews(news);
+    };
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setSelectedNews(prevState => {
-                const currentIndex = newsData.findIndex(news => news.alt === prevState.alt);
-                return newsData[(currentIndex + 1) % newsData.length];
-            });
+            if (!pause) {
+                setSelectedNews(prevState => {
+                    const currentIndex = newsData.findIndex(news => news.alt === prevState.alt);
+                    return newsData[(currentIndex + 1) % newsData.length];
+                });
+            }
         }, 4000);
         return () => clearInterval(interval); // Clean up on unmount
-    }, []);
+    }, [pause]);
 
     useEffect(() => {
         if (carouselRef.current) {
@@ -41,8 +54,8 @@ const News: React.FC = () => {
                 adaptiveHeight: true,
                 wrapAround: true,
                 dragThreshold: 15,
-                pauseAutoPlayOnHover: false,
-                // autoPlay: 6000,
+                pauseAutoPlayOnHover: true,
+                autoPlay: 6000,
                 imagesLoaded: true,
                 cellSelector: '.NewsImage',
             });
@@ -59,6 +72,9 @@ const News: React.FC = () => {
                     src={news.src}
                     alt={news.alt}
                     className={`NewsImage ${news.alt === selectedNews.alt ? 'selected' : ''} transition-opacity duration-200`}
+                    onClick={() => handleImageClick(news)}
+                    onMouseEnter={() => setPause(true)}
+                    onMouseLeave={() => setPause(false)}
                 />
             ))}
         </div>

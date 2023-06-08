@@ -680,6 +680,10 @@ video {
   border-bottom-width: 1px;
 }
 
+.border-t {
+  border-top-width: 1px;
+}
+
 .bg-green-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(34 197 94 / var(--tw-bg-opacity));
@@ -699,10 +703,6 @@ video {
   padding-bottom: 5rem;
 }
 
-.pl-14 {
-  padding-left: 3.5rem;
-}
-
 .pl-16 {
   padding-left: 4rem;
 }
@@ -719,19 +719,14 @@ video {
   text-align: center;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .font-bold {
@@ -887,6 +882,15 @@ video {
 @media (min-width: 1024px) {
   .NewsImage {
     opacity: 0.4;
+    cursor: pointer;
+  }
+
+  .NewsImage.selected {
+    opacity: 1;
+  }
+
+  .NewsImage {
+    opacity: 0.4;
   }
 
   .NewsImage.selected {
@@ -951,33 +955,35 @@ video {
   max-width: 50px;
 }
 
-/* Add this to your existing CSS */
+.carousel-cell-wrapper {
+  position: relative;
+}
 
-/*html {*/
+.carouselText {
+  position: absolute;
+  top: 50px;
+  /* Adjust this value as needed */
+  text-align: center;
+}
 
-/*    overflow-y: scroll;*/
-
-/*}*/
-
-/* Adjust the width of the scroll bar as needed */
-
-/*::-webkit-scrollbar {*/
-
-/*    width: 10px;*/
-
-/*}*/
+{
+  /*<div className='carouselText'>*/
+  /*    <div className="">*/
+  /*        {benefits.mainText}*/
+  /*    </div>*/
+  /*    <div className="">*/
+  /*        {benefits.subText}*/
+  /*    </div>*/
+  /*</div>*/
+}
 
 @media (min-width: 1024px) {
-  .lg\:mb-8 {
-    margin-bottom: 2rem;
-  }
-
-  .lg\:mb-12 {
-    margin-bottom: 3rem;
-  }
-
   .lg\:mb-20 {
     margin-bottom: 5rem;
+  }
+
+  .lg\:mb-8 {
+    margin-bottom: 2rem;
   }
 
   .lg\:pb-24 {
