@@ -28,9 +28,22 @@ function Navbar() {
     if (scrolled){
         navbarClasses.push('scrolled');
     }
+    if (!scrolled) {
+        navbarClasses.push('navBarWithAnnouncement');
+    }
 
 
     return (
+        <div>
+            { !scrolled &&
+                    <div className="AnnouncementBar px-6 py-3">
+                        <div className="AnnouncementBar-Wrapper text-center">
+                            <p className="AnnouncementBar-Content font-bold text-sm tracking-widest">
+                                FREE SHIPPING FOR ALL ORDERS OVER <span className='loraBold'> $100 </span>
+                            </p>
+                        </div>
+                    </div>
+            }
         <nav className={navbarClasses.join(" ")}>
             <div className='navWrapper flex flex-row items-center align-center justify-between'>
             <div className='flex flex-row font-bold text-xlg tracking-widest'>
@@ -55,7 +68,9 @@ function Navbar() {
                 </div>
             </div>
             </div>
+
         </nav>
+        </div>
     );
 }
 

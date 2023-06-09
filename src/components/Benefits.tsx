@@ -106,7 +106,7 @@ const Benefits: React.FC = () => {
     };
 
     return (
-        <div className='border-b border-t darkerbg'>
+        <div className='border-b border-t darkerbg w-full'>
             <>
             <div className="container mx-auto pt-12 pb-20 lg:pt-20 lg:pb-20 mobile-hidden tablet-hidden">
                 <div className='benefitsText' key={selectedBenefit.mainText}>
@@ -137,7 +137,7 @@ const Benefits: React.FC = () => {
 
 
 
-                <div className="container mx-auto pt-12 pb-20 lg:pt-24 lg:pb-24 desktop-hidden">
+                <div className="container mx-auto pt-12 pb-20 lg:pt-24 lg:pb-24 desktop-hidden ">
                     <div>
                     </div>
                     {/*Carousel*/}

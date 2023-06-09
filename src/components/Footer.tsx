@@ -7,7 +7,7 @@ import pinterest from '../assets/site/pinterest.svg'
 
 const Footer: React.FC = () => {
     return (
-        <footer className="footer">
+        <footer className="footer w-full">
             <div className="footer-section flex flex-col px-6">
                 <h2 className="footer-section-header">YASURAGI TEA</h2>
                 <div className="">

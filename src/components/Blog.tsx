@@ -33,7 +33,7 @@ const blogData: BlogType[] = [
 
 const Blog: React.FC = () => {
     return (
-        <div className='flex flex-col py-24 items-center'>
+        <div className='flex flex-col py-24 items-center w-full'>
             <div className='blogWrapper items-center'>
             <div className='mb-16 text-2xl font-bold text-center tracking-widest darkBrownFont'>BLOG</div>
         <div className="flex flex-col lg:flex-row justify-around">

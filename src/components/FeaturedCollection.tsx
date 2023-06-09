@@ -31,6 +31,7 @@ const FeaturedCollection: React.FC = () => {
 
             <div className='featured-collection-images'>
                 {imagePaths.map((img, index) => (
+                    <div className='featured-img-wrapper'>
                     <img
                         src={hoveredImg === index ? img.hover : img.default}
                         onMouseEnter={() => setHoveredImg(index)}
@@ -39,6 +40,7 @@ const FeaturedCollection: React.FC = () => {
                         key={index}
                         className={`featured-img featured-img-${index}`}
                     />
+                    </div>
                 ))}
             </div>
             <div className='flex items-center justify-center mt-12'>
