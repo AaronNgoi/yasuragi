@@ -110,7 +110,7 @@ const Benefits: React.FC = () => {
             <>
             <div className="container mx-auto pt-12 pb-20 lg:pt-20 lg:pb-20 mobile-hidden tablet-hidden">
                 <div className='benefitsText' key={selectedBenefit.mainText}>
-                <div className="text-center font-bold text-2xl py-4">
+                <div className="text-center font-bold text-2xl py-4 darkBrownFont">
                     {selectedBenefit.mainText}
                 </div>
                 <div className="text-center text-2xl py-4 lg:mb-20">
@@ -153,7 +153,7 @@ const Benefits: React.FC = () => {
                                         alt={benefits.alt}
                                     />
                                         <div className='carouselText'>
-                                            <div className="">
+                                            <div className="darkBrownFont">
                                                 {benefits.mainText}
                                             </div>
                                             <div className="">

@@ -624,8 +624,28 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
+.mb-12 {
+  margin-bottom: 3rem;
+}
+
 .mb-16 {
   margin-bottom: 4rem;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 
 .mb-8 {
@@ -634,6 +654,10 @@ video {
 
 .ml-6 {
   margin-left: 1.5rem;
+}
+
+.mr-4 {
+  margin-right: 1rem;
 }
 
 .mt-1 {
@@ -648,6 +672,14 @@ video {
   margin-top: 0.5rem;
 }
 
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .flex {
   display: flex;
 }
@@ -656,8 +688,20 @@ video {
   height: 1.5rem;
 }
 
+.w-32 {
+  width: 8rem;
+}
+
 .w-6 {
   width: 1.5rem;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.max-w-xl {
+  max-width: 36rem;
 }
 
 .flex-row {
@@ -692,6 +736,10 @@ video {
   align-self: flex-start;
 }
 
+.self-end {
+  align-self: flex-end;
+}
+
 .self-center {
   align-self: center;
 }
@@ -709,9 +757,43 @@ video {
   background-color: rgb(34 197 94 / var(--tw-bg-opacity));
 }
 
+.bg-transparent {
+  background-color: transparent;
+}
+
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
 .py-16 {
   padding-top: 4rem;
   padding-bottom: 4rem;
+}
+
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.py-28 {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
 }
 
 .py-4 {
@@ -896,6 +978,64 @@ video {
   border-top: solid 1px #E5E4DF;
 }
 
+.inputBox {
+  border: solid 1px #545324;
+  color: #1C150E;
+}
+
+.inputBox::-webkit-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #443322;
+  opacity: 1;
+  /* Firefox */
+}
+
+.inputBox::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #443322;
+  opacity: 1;
+  /* Firefox */
+}
+
+.inputBox:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #443322;
+}
+
+.inputBox::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #443322;
+}
+
+.inputBox2 {
+  border: solid 1px #545324;
+  color: #F9F4ED;
+}
+
+.inputBox2::-webkit-input-placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #F6EFE4;
+  opacity: 1;
+  /* Firefox */
+}
+
+.inputBox2::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #F6EFE4;
+  opacity: 1;
+  /* Firefox */
+}
+
+.inputBox2:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #F6EFE4;
+}
+
+.inputBox2::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #F6EFE4;
+}
+
 .navWrapper {
   padding: 8px 18px;
 }
@@ -913,7 +1053,7 @@ video {
 }
 
 .HeroText{
-  position: relative;
+  position: absolute;
   max-width: 94vw;
   z-index: 30;
   top: 35vh;
@@ -922,8 +1062,8 @@ video {
   padding: 3vh 5vw;
 }
 
-.HeroText2{
-  position: relative;
+.HeroText3{
+  position: absolute;
   max-width: 94vw;
   z-index: 30;
   top: 60vh;
@@ -933,15 +1073,15 @@ video {
 }
 
 @media (max-width: 1023px) {
-  .HeroText2 {
+  .HeroText3 {
     color: #F9F4ED;
   }
 }
 
-.HeroText3{
+.HeroText2{
   position: absolute;
   max-width: 94vw;
-  z-index: 30;
+  z-index: 20;
   top: 22vh;
   right: 0;
   display: flex;
@@ -975,17 +1115,68 @@ video {
   line-height: 1.5rem;
   letter-spacing: 1px;
   align-items: center;
+  z-index: 30;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
 }
 
-.HeroButtonEnd {
-  color: #F9F4ED;
-  background-color: #545324;
+.HeroButton:hover {
+  color: #545324;
+  background-color: transparent;
+  font-weight: 600;
+}
+
+.HeroButton:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: -100%;
+  left: 0;
+  background: #545324;
+  opacity: 0.2;
+  transition: all 2s ease-in-out;
+}
+
+.HeroButton:hover:before {
+  bottom: 0;
+}
+
+.HeroButtonLight {
+  color: #525C3D;
+  background-color: #F9F4ED;
   padding: 8px 16px;
   display: flex;
-  align-self: flex-end;
   font-size: 0.875rem;
   line-height: 1.5rem;
   letter-spacing: 1px;
+  align-items: center;
+  z-index: 20;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+.HeroButtonLight:hover {
+  background-color: #F6EFE4;
+  font-weight: 600;
+}
+
+.HeroButtonLight:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: -100%;
+  left: 0;
+  background: #494C0B;
+  opacity: 0.2;
+  transition: all 2s ease-in-out;
+}
+
+.HeroButtonLight:hover:before {
+  bottom: 0;
 }
 
 .text-xlg{
@@ -1135,19 +1326,93 @@ video {
   text-decoration: underline;
 }
 
-.blogWrapper {
-  width: 85vw;
+.clickMore:hover {
+  color: #333E19;
+  font-weight: bold;
 }
 
-{
-  /*<div className='carouselText'>*/
-  /*    <div className="">*/
-  /*        {benefits.mainText}*/
-  /*    </div>*/
-  /*    <div className="">*/
-  /*        {benefits.subText}*/
-  /*    </div>*/
-  /*</div>*/
+.blogWrapper {
+  width: 85vw;
+  display: flex;
+  justify-items: center;
+  flex-direction: column;
+}
+
+.newsletterBg {
+  background-image: url('../assets/site/matchaTile3.webp');
+  /*background-size: cover;*/
+}
+
+.footer {
+  background-color: #8B8662;
+}
+
+.darkBrownFont {
+  color: #443322;
+}
+
+.footer-section-header {
+  color: #443322;
+  letter-spacing: 0.025em;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-bottom: 0.875rem;
+}
+
+.socialIcon {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 1.25rem;
+}
+
+.section-link {
+  margin-bottom: 0.5rem;
+}
+
+.section-link:hover {
+  color: #F9F4ED;
+}
+
+.footer-section {
+  margin-bottom: 1.5rem;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  padding-top: 4rem;
+  bottom: 2.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  justify-content: space-between;
+}
+
+@media (min-width: 730px) {
+  .footer {
+    flex-direction: row;
+  }
+
+  .footer-section {
+    max-width: 45vw;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-section {
+    max-width: 30vw;
+  }
+
+  .footer {
+    justify-content: space-around;
+    padding-left: 2.625rem;
+    padding-right: 2.625rem;
+  }
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 @media (min-width: 1024px) {
@@ -1157,6 +1422,10 @@ video {
 
   .lg\:mb-8 {
     margin-bottom: 2rem;
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
   }
 
   .lg\:pb-20 {
@@ -1175,3 +1444,4 @@ video {
     padding-top: 6rem;
   }
 }
+

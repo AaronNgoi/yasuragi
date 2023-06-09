@@ -4,6 +4,8 @@ import News from '../components/News';
 import FeaturedCollection from "../components/FeaturedCollection";
 import Benefits from "../components/Benefits";
 import Blog from "../components/Blog";
+import Newsletter from "../components/Newsletter";
+import Footer from "../components/Footer";
 
 const Home: React.FC = () => {
     return (
@@ -16,6 +18,8 @@ const Home: React.FC = () => {
             <FeaturedCollection/>
             <Benefits/>
             <Blog/>
+            <Newsletter/>
+            <Footer/>
             {/*<div className='text-20 testmargin bg-green-500'>"Hello World"</div>*/}
         </div>
     </>

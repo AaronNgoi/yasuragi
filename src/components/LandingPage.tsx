@@ -39,19 +39,19 @@ const LandingPage: React.FC = () => {
                 </div>
             </div>
             <div className="carousel-cell">
-                <img src={HeroBG2} alt="Bg Img 2" className='carouselImage'/>
+                <img src={HeroBG3} alt="Bg Img 2" className='carouselImage'/>
                 <div className='HeroText2'>
-                    <div className='HeroSubHeader'>Indulge in the Wholesome Blend of Our Powdered Genmaicha</div>
-                    <div className='HeroHeader'>POWDERED GENMAICHA</div>
-                    <button className='HeroButton self-start'> DISCOVER MORE</button>
+                    <div className='HeroSubHeader'>Experience the Warm, Toasty Delight of Our Powdered Houjicha</div>
+                    <div className='HeroHeader'>POWDERED HOUJICHA</div>
+                    <button className='HeroButtonLight self-end'> DISCOVER MORE</button>
                 </div>
             </div>
             <div className="carousel-cell">
-                <img src={HeroBG3} alt="Bg Img 3" className='carouselImage'/>
+                <img src={HeroBG2} alt="Bg Img 3" className='carouselImage'/>
                 <div className='HeroText3'>
-                    <div className='HeroSubHeader'>Experience the Warm, Toasty Delight of Our Powdered Houjicha</div>
-                    <div className='HeroHeader'>POWDERED HOUJICHA</div>
-                    <button className='HeroButtonEnd'> DISCOVER MORE</button>
+                    <div className='HeroSubHeader'>Indulge in the Wholesome Blend of Our Powdered Genmaicha</div>
+                    <div className='HeroHeader'>POWDERED GENMAICHA</div>
+                    <button className='HeroButtonLight self-start'> DISCOVER MORE</button>
                 </div>
             </div>
         </div>

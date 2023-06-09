@@ -26,8 +26,8 @@ const FeaturedCollection: React.FC = () => {
 
     return (
         <div className='featured-collection py-16 flex flex-col'>
-            <h1>FEATURED COLLECTION</h1>
-            <h2 className='text-xl font-bold py-4'>Where Tradition Meets Quality: Our Top-Tier Teas.</h2>
+            <h1 className=''>FEATURED COLLECTION</h1>
+            <h2 className='text-2xl font-bold text-center tracking-widest darkBrownFont py-4'>Where Tradition Meets Quality: Our Top-Tier Teas</h2>
 
             <div className='featured-collection-images'>
                 {imagePaths.map((img, index) => (

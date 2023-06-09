@@ -33,10 +33,10 @@ const blogData: BlogType[] = [
 
 const Blog: React.FC = () => {
     return (
-        <div className='flex flex-col py-16 items-center'>
-            <div className='blogWrapper'>
-            <div className='mb-16 text-2xl font-bold text-center tracking-widest'>BLOG</div>
-        <div className="flex flex-row justify-around">
+        <div className='flex flex-col py-24 items-center'>
+            <div className='blogWrapper items-center'>
+            <div className='mb-16 text-2xl font-bold text-center tracking-widest darkBrownFont'>BLOG</div>
+        <div className="flex flex-col lg:flex-row justify-around">
             {blogData.map((blog, i) => (
                 <div key={i} className="flex flex-col mb-8 blogUnit items-start">
                     <div className="imageWrapper">
@@ -49,6 +49,7 @@ const Blog: React.FC = () => {
                 </div>
             ))}
         </div>
+                <button className="HeroButton mt-8">VIEW ALL ARTICLES</button>
             </div>
         </div>
     );
