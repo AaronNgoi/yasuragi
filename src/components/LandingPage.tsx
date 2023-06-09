@@ -4,25 +4,29 @@ import HeroBG1 from '../assets/site/HeroBG1.webp';
 import HeroBG2 from '../assets/site/HeroBG2.webp';
 import HeroBG3 from '../assets/site/HeroBG3.webp';
 import '../styles/flickity.css';
+import 'flickity-fade';
 
 const LandingPage: React.FC = () => {
     const carouselRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
         if (carouselRef.current) {
-            new Flickity(carouselRef.current, {
+            const flickityInstance = new Flickity(carouselRef.current, {
                 prevNextButtons: false,
                 setGallerySize: false,
                 adaptiveHeight: true,
                 wrapAround: true,
                 dragThreshold: 15,
-                pauseAutoPlayOnHover: false,
-                // autoPlay: 6000,
+                pauseAutoPlayOnHover: true,
+                autoPlay: 6000,
                 imagesLoaded: true,
                 cellSelector: '.carousel-cell',
+                fade: true
             });
         }
     }, []);
+
+
 
     return (
         <div ref={carouselRef} className="carousel main-bg">

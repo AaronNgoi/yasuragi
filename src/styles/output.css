@@ -624,12 +624,28 @@ video {
   margin-bottom: 0.5rem;
 }
 
+.mb-16 {
+  margin-bottom: 4rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
 .ml-6 {
   margin-left: 1.5rem;
 }
 
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
 .mt-12 {
   margin-top: 3rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
 }
 
 .flex {
@@ -650,6 +666,10 @@ video {
 
 .flex-col {
   flex-direction: column;
+}
+
+.items-start {
+  align-items: flex-start;
 }
 
 .items-center {
@@ -724,6 +744,16 @@ video {
   line-height: 2rem;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -737,6 +767,11 @@ video {
   letter-spacing: 0.1em;
 }
 
+.text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99 / var(--tw-text-opacity));
+}
+
 .transition-opacity {
   transition-property: opacity;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -745,6 +780,90 @@ video {
 
 .duration-200 {
   transition-duration: 200ms;
+}
+
+@-webkit-keyframes dropDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+}
+
+@keyframes dropDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+}
+
+@-webkit-keyframes riseUp {
+  0%, 60% {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes riseUp {
+  0%, 60% {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes riseUpNoDelay {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes riseUpNoDelay {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
 }
 
 .displayFont {
@@ -879,6 +998,11 @@ video {
   width: 150px;
 }
 
+.BenefitsImage{
+  height: 150px;
+  width: 150px;
+}
+
 @media (min-width: 1024px) {
   .NewsImage {
     opacity: 0.4;
@@ -889,11 +1013,11 @@ video {
     opacity: 1;
   }
 
-  .NewsImage {
-    opacity: 0.4;
+  .BenefitsImage {
+    opacity: 0.25;
   }
 
-  .NewsImage.selected {
+  .BenefitsImage.selected {
     opacity: 1;
   }
 }
@@ -959,11 +1083,60 @@ video {
   position: relative;
 }
 
-.carouselText {
-  position: absolute;
-  top: 50px;
-  /* Adjust this value as needed */
-  text-align: center;
+.HeroText, .HeroText2, .HeroText3 {
+  -webkit-animation: dropDown 0.5s forwards;
+          animation: dropDown 0.5s forwards;
+}
+
+.carousel-cell.is-selected .HeroText,
+.carousel-cell.is-selected .HeroText2,
+.carousel-cell.is-selected .HeroText3 {
+  -webkit-animation: riseUp 1.7s forwards;
+          animation: riseUp 1.7s forwards;
+}
+
+.imageWrapper {
+  overflow: hidden;
+}
+
+.blogImage {
+  width: 100%;
+  height: auto;
+  transition: -webkit-transform 4s ease-in-out;
+  transition: transform 4s ease-in-out;
+  transition: transform 4s ease-in-out, -webkit-transform 4s ease-in-out;
+}
+
+.blogImage:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.blogUnit {
+  width: 100%;
+  height: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 1425px) {
+  .blogUnit {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.blogAuthor {
+  color: #77593C;
+}
+
+.clickMore {
+  color: #333E19;
+  text-decoration: underline;
+}
+
+.blogWrapper {
+  width: 85vw;
 }
 
 {
@@ -986,8 +1159,16 @@ video {
     margin-bottom: 2rem;
   }
 
+  .lg\:pb-20 {
+    padding-bottom: 5rem;
+  }
+
   .lg\:pb-24 {
     padding-bottom: 6rem;
+  }
+
+  .lg\:pt-20 {
+    padding-top: 5rem;
   }
 
   .lg\:pt-24 {

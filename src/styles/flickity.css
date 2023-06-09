@@ -23,10 +23,25 @@
     height: 94vh !important;
 }
 
+.main-bg .carousel-cell img {
+    transform: scale(1.15);
+    transition: transform 1.4s;
+}
+
+.main-bg .carousel-cell.is-selected img {
+    transform: scale(1);
+}
+
 .news-testimonial .flickity-viewport {
     overflow: hidden;
     position: relative;
     height: 150px;
+}
+
+.benefits .flickity-viewport {
+    overflow: hidden;
+    position: relative;
+    height: 300px;
 }
 
 .main-bg .flickity-slider {
@@ -40,6 +55,12 @@
 .news-testimonial .flickity-slider {
     position: relative;
     height: 150px;
+    margin: auto;
+}
+
+.benefits .flickity-slider {
+    position: relative;
+    height: 300px;
     margin: auto;
 }
 
@@ -65,10 +86,37 @@
     margin-right: auto;
 }
 
+.BenefitsWrapper {
+    width:300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .news-testimonial .carousel-cell {
     height: 150px;
     width: 150px;
     position: absolute;
+}
+
+
+/*.benefitsText {*/
+/*    !*animation: dropDown 1.4s forwards;*!*/
+/*    animation: riseUpNoDelay 1.4s forwards;*/
+/*}*/
+
+.benefitsText.selected {
+
+}
+
+
+.benefits .carousel-cell {
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-around;
 }
 
 
@@ -84,14 +132,24 @@
     /*border: solid 1px red;*/
 }
 
-.news-testimonial .carouselImage {
-    /*object-fit: cover;*/
-    /*object-position: center;*/
+/*.news-testimonial .carouselImage {*/
+/*    !*object-fit: cover;*!*/
+/*    !*object-position: center;*!*/
+/*    height: 150px;*/
+/*    width: 150px;*/
+/*    position: absolute;*/
+/*}*/
+
+.benefits .carouselImage {
     height: 150px;
     width: 150px;
-    position: absolute;
+    /*position: absolute;*/
 }
 
+.benefits .carouselText {
+    /*position: flex;*/
+    text-align: center;
+}
 
 /* draggable */
 
@@ -139,6 +197,17 @@
     line-height: 1;
 }
 
+.benefits .flickity-page-dots {
+    position: relative;
+    bottom: -1.875rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    width: 300px;
+    line-height: 1;
+}
+
 
 .flickity-rtl .flickity-page-dots { direction: rtl; }
 
@@ -168,7 +237,20 @@
     border-color: #1C150E;
     margin-left: 0.25rem;
     margin-right: 0.25rem;
+}
 
+.benefits .flickity-page-dots .flickity-page-dot {
+    padding: 0;
+    font-size: 0;
+    width: 12px;
+    height: 12px;
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    border-width: 2px;
+    border-color: #1C150E;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
 }
 
 .flickity-page-dots .is-selected {
@@ -176,6 +258,10 @@
 }
 
 .news-testimonial .flickity-page-dots .is-selected {
+    background-color: #1C150E;
+}
+
+.benefits .flickity-page-dots .is-selected {
     background-color: #1C150E;
 }
 

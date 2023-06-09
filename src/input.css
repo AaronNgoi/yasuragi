@@ -3,6 +3,21 @@
 @tailwind utilities;
 
 
+@keyframes dropDown {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(50px); }
+}
+
+@keyframes riseUp {
+    0%, 60% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes riseUpNoDelay {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
 .displayFont {
     font-family: bely display, sans-serif;
     font-weight: 400;
@@ -137,6 +152,11 @@
     width: 150px;
 }
 
+.BenefitsImage{
+    height: 150px;
+    width: 150px;
+}
+
 @media (min-width: 1024px) {
     .NewsImage {
         opacity: 0.4;
@@ -149,11 +169,11 @@
 }
 
 @media (min-width: 1024px) {
-    .NewsImage {
-        opacity: 0.4;
+    .BenefitsImage {
+        opacity: 0.25;
     }
 
-    .NewsImage.selected {
+    .BenefitsImage.selected {
         opacity: 1;
     }
 }
@@ -220,14 +240,57 @@
     position: relative;
 }
 
-.carouselText {
-    position: absolute;
-    top: 50px; /* Adjust this value as needed */
-
-    text-align: center;
+.HeroText, .HeroText2, .HeroText3 {
+    animation: dropDown 0.5s forwards;
 }
 
+.carousel-cell.is-selected .HeroText,
+.carousel-cell.is-selected .HeroText2,
+.carousel-cell.is-selected .HeroText3 {
+    animation: riseUp 1.7s forwards;
+}
 
+.imageWrapper {
+    overflow: hidden;
+}
+
+.blogImage {
+    width: 100%;
+    height: auto;
+    transition: transform 4s ease-in-out;
+}
+
+.blogImage:hover {
+    transform: scale(1.2);
+}
+
+.blogUnit {
+
+    width: 100%;
+    height: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 1425px) {
+    .blogUnit {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+.blogAuthor {
+    color: #77593C;
+}
+
+.clickMore {
+    color: #333E19;
+    text-decoration: underline;
+}
+
+.blogWrapper {
+    width: 85vw;
+}
 
 {/*<div className='carouselText'>*/}
 {/*    <div className="">*/}

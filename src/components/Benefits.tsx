@@ -5,6 +5,7 @@ import Packaging from '../assets/site/3packaging.png';
 import Recycle from '../assets/site/4recycle.png';
 import Flickity from 'flickity';
 import '../styles/flickity.css';
+import 'flickity-fade';
 
 interface FlickityInstance extends Flickity {
     selectedIndex: number;
@@ -79,9 +80,10 @@ const Benefits: React.FC = () => {
                 wrapAround: true,
                 dragThreshold: 15,
                 pauseAutoPlayOnHover: true,
-                autoPlay: 4000,
+                // autoPlay: 4000,
                 imagesLoaded: true,
                 cellSelector: '.NewsImage',
+                    fade: true,
                 }) as FlickityInstance;
 
             if (flickityRef.current) {
@@ -106,8 +108,8 @@ const Benefits: React.FC = () => {
     return (
         <div className='border-b border-t darkerbg'>
             <>
-            <div className="container mx-auto pt-12 pb-20 lg:pt-24 lg:pb-24 mobile-hidden tablet-hidden">
-                <div>
+            <div className="container mx-auto pt-12 pb-20 lg:pt-20 lg:pb-20 mobile-hidden tablet-hidden">
+                <div className='benefitsText' key={selectedBenefit.mainText}>
                 <div className="text-center font-bold text-2xl py-4">
                     {selectedBenefit.mainText}
                 </div>
@@ -121,7 +123,7 @@ const Benefits: React.FC = () => {
                     {benefitsData.map((benefit, i) => (
                         <img
                             key={i}
-                            className={`carousel-cell NewsImage ${benefit.alt === selectedBenefit.alt ? 'selected' : ''}`}
+                            className={`carousel-cell BenefitsImage ${benefit.alt === selectedBenefit.alt ? 'selected' : ''}`}
                             src={benefit.src}
                             alt={benefit.alt}
                             onClick={() => handleImageClick(benefit)}
@@ -131,24 +133,7 @@ const Benefits: React.FC = () => {
                     ))}
                 </div>
                 </div>
-                {/*Carousel*/}
-                {/*<div className='BrandWrapper desktop-hidden'>*/}
-                {/*    <div className="relative items-center">*/}
-                {/*        <div className="carousel news-testimonial" ref={carouselRef}>*/}
-                {/*            {benefitsData.map((benefits, i) => (*/}
-                {/*                <img*/}
-                {/*                    key={i}*/}
-                {/*                    className="carousel-cell NewsImage"*/}
-                {/*                    src={benefits.src}*/}
-                {/*                    alt={benefits.alt}*/}
-                {/*                />*/}
-                {/*            ))}*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-                {/*</div>*/}
             </div>
-
-
 
 
 
@@ -156,14 +141,14 @@ const Benefits: React.FC = () => {
                     <div>
                     </div>
                     {/*Carousel*/}
-                    <div className='BrandWrapper desktop-hidden'>
+                    <div className='BenefitsWrapper desktop-hidden'>
                         <div className="relative items-center">
-                            <div className="carousel news-testimonial" ref={carouselRef}>
+                            <div className="carousel benefits" ref={carouselRef}>
                                 {benefitsData.map((benefits, i) => (
                                     <div className='carousel-cell NewsImage'>
                                     <img
                                         key={i}
-                                        className=""
+                                        className="carouselImage"
                                         src={benefits.src}
                                         alt={benefits.alt}
                                     />

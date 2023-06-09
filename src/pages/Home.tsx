@@ -3,6 +3,7 @@ import LandingPage from '../components/LandingPage';
 import News from '../components/News';
 import FeaturedCollection from "../components/FeaturedCollection";
 import Benefits from "../components/Benefits";
+import Blog from "../components/Blog";
 
 const Home: React.FC = () => {
     return (
@@ -14,6 +15,7 @@ const Home: React.FC = () => {
         <div className='flex flex-col'>
             <FeaturedCollection/>
             <Benefits/>
+            <Blog/>
             {/*<div className='text-20 testmargin bg-green-500'>"Hello World"</div>*/}
         </div>
     </>

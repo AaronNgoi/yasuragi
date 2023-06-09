@@ -8,6 +8,7 @@ import MarieClaire from '../assets/site/marieclaire.png';
 import NaturalHealth from '../assets/site/naturalhealth.png';
 import Flickity from 'flickity';
 import '../styles/flickity.css';
+import 'flickity-fade';
 
 
 type NewsType = {
@@ -58,6 +59,7 @@ const News: React.FC = () => {
                 autoPlay: 6000,
                 imagesLoaded: true,
                 cellSelector: '.NewsImage',
+                fade: true
             });
         }
     }, []);
