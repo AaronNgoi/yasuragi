@@ -18,6 +18,11 @@
     100% { opacity: 1; transform: translateY(0); }
 }
 
+
+.riseUp {
+    animation: riseUp 1s forwards;
+}
+
 .displayFont {
     font-family: bely display, sans-serif;
     font-weight: 400;
@@ -111,6 +116,10 @@
 
 .navWrapper {
     padding: 8px 18px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr; /* Three columns: 1st, 2nd, 3rd */
+    align-items: center;
+    justify-items: center;
 }
 
 @media (min-width: 641px) {
@@ -122,6 +131,7 @@
 @media (min-width: 1140px) {
     .navWrapper {
         padding: 12px 50px;
+
     }
 }
 
@@ -367,7 +377,7 @@
 .carousel-cell.is-selected .HeroText,
 .carousel-cell.is-selected .HeroText2,
 .carousel-cell.is-selected .HeroText3 {
-    animation: riseUp 1.7s forwards;
+    animation: riseUpnodelay 0.8s forwards;
 }
 
 .imageWrapper {
@@ -431,6 +441,8 @@
     }
 }
 
+
+
 .newsletterBg {
     position: relative;
     overflow: hidden;
@@ -439,7 +451,7 @@
 
 .newsletterBg .background {
     background-image: url('../assets/site/matchaTile3.webp');
-    animation: focus-in 0.8s ease-out forwards;
+    animation: focus-in 1.8s ease-out forwards;
     position: absolute;
     top: 0;
     left: 0;
@@ -494,6 +506,34 @@
     justify-content: space-between;
 }
 
+.mobileAbout {
+    position:relative;
+    min-height: 440px;
+}
+
+.AboutBgWrapper {
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #F9F4ED;
+    z-index: 1;
+}
+
+.Overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust the alpha value (last parameter) for darkness level */
+    z-index: 2;
+}
+
 @media (min-width: 730px) {
     .footer {
         flex-direction: row;
@@ -520,10 +560,32 @@
     letter-spacing: 0.08em;
     --tw-scale-x: 1.55;
     --tw-scale-y: 1.3;
+
     font-size: 1.375rem;
     line-height: 1.875rem;
+    transition: all 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+    cursor: pointer;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
+@media (max-width: 365px) {
+
+    .AboutBlock .ActiveAboutTab {
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+        padding-left: 0.625rem;
+        padding-right: 0.625rem;
+        --tw-scale-x: 1.35;
+        --tw-scale-y: 1.2;
+    }
+
+    .AboutBlock .PassiveAboutTab {
+        padding-left: 0.625rem;
+        padding-right: 0.625rem;
+    }
+
+}
 
 .PassiveAboutTab {
 
@@ -531,23 +593,30 @@
     line-height: 1.25rem;
     color: #77593C;
     letter-spacing: 0.05em;
+    transition: all 0.3s cubic-bezier(0.42, 0, 0.58, 1);
+    cursor: pointer;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .AboutMainText {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    letter-spacing: 1px;
 }
 
 .AboutGreen {
     color: #333E19;
-    text-decoration: underline;
-    justify-content: center;
+    /*justify-content: center;*/
 }
 
 .AboutTextBlock {
     display: flex;
     flex-direction: column;
-    max-width: 550px;
+    max-width: min(700px, 40vw);
+    max-height: 492px;
+    overflow-y: auto;
+    z-index: 2;
 }
 
 .AboutBlock {
@@ -559,6 +628,88 @@
 }
 
 .AboutContentWrapper {
-    width: 70vw;
+    max-width: min(70vw, 1300px);
+    min-height: 320px;
     background-color: #A3A672;
+}
+
+/*(min-width: 1024px) and*/
+
+@media (max-width: 1024px) {
+    .AboutTextBlock {
+      max-width: unset;
+        color: #D9D9D9;
+    }
+
+    .AboutContentWrapper{
+        max-width: 80vw;
+        background-color: unset;
+    }
+
+    .AboutGreen {
+        color: #B2B795;
+    }
+
+    .AboutBgWrapper {
+        min-height: unset;
+    }
+}
+
+.mobileTextWrapper {
+    width: 80%; /* Set the desired width for the text wrapper */
+    margin: 0 auto; /* Center the text wrapper horizontally */
+    display: flex;
+    flex-direction: column;
+    animation: riseUpNoDelay 0.5s forwards;
+}
+
+/*@media (min-width: 769px) and (max-width: 1024px) {*/
+/*    .*/
+/*        max-width: unset;*/
+/*        color: #D9D9D9;*/
+/*    }*/
+/*}*/
+
+@media (min-width: 1024px) and (max-width: 1290px) {
+    .AboutContentWrapper {
+        max-width: min(85vw, 1300px);
+    }
+}
+
+
+
+.AboutImageWrapper {
+    max-width: 492px;
+    height: 100%;
+    min-width: 320px;
+    min-height: 320px;
+    position: relative;
+    overflow: hidden;
+}
+
+.AboutImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*animation: slowFocus 1s ease-out forwards;*/
+}
+
+.slowFocusIn {
+    animation: slowFocus 0.7s ease-out forwards;
+}
+
+@keyframes slowFocus {
+    0% {
+        opacity: 0.88;
+        transform: scale(1.04);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.0);
+    }
+}
+
+
+.focusIn {
+    animation: focus-in 1s ease-out forwards;
 }
