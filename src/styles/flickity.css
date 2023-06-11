@@ -24,8 +24,8 @@
 }
 
 .main-bg .carousel-cell img {
-    transform: scale(1.15);
-    transition: transform 1.4s;
+    transform: scale(1.08);
+    transition: transform 1.1s cubic-bezier(0.42, 0, 0.58, 1);
     pointer-events: none;
 }
 

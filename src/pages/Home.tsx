@@ -22,7 +22,6 @@ const Home: React.FC = () => {
             <Blog/>
             <Newsletter/>
             <Footer/>
-            {/*<div className='text-20 testmargin bg-green-500'>"Hello World"</div>*/}
         </div>
     </>
     );

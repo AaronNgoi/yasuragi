@@ -14,10 +14,12 @@ import Home from './pages/Home';
 // import Planet from './pages/Planet';
 import Navbar from './components/Navbar';
 import './styles/output.css';
+import Footer from "./components/Footer";
 
 function App() {
   return (
       <Router>
+          <div className="">
           <Navbar />
         <Routes>
           {/*<Route path="/all-products" Component={AllProducts} />*/}
@@ -33,6 +35,7 @@ function App() {
           {/*<Route path="/pages/planet" Component={Planet} />*/}
           <Route path="/" Component={Home} />
         </Routes>
+          </div>
       </Router>
   );
 }

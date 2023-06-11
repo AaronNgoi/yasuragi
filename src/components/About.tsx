@@ -102,7 +102,7 @@ const About: React.FC = () => {
                 <div
                     key={tab.name}
                     onClick={() => handleTabChange(tab.name)}
-                    className={`py-2 h-12 flex flex-row items-center justify-center font-bold ${activeTab === tab.name ? 'ActiveAboutTab' : 'PassiveAboutTab'}`}
+                    className={`py-2 h-12 flex flex-row relative items-center justify-center font-bold ${activeTab === tab.name ? 'ActiveAboutTab' : 'PassiveAboutTab'}`}
                 >
                     {tab.name}
                 </div>

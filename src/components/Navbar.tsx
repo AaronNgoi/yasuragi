@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import SiteIcon from '../assets/site/heroLogo.png';
+import mobileIcon from '../assets/site/YasuragiMobileLogo.webp';
+import desktopIcon from '../assets/site/YausragiDesktopLogo.webp';
 import SearchIcon from '../assets/site/searchIcon.svg';
 import CartIcon from '../assets/site/cartIcon.svg';
+import menuIcon from '../assets/site/menu.svg';
 
 function Navbar() {
 
     const [scrolled, setScrolled] = useState(false);
+    const [showAboutMegaMenu, setShowAboutMegaMenu] = useState(false);
+    const [showShopMegaMenu, setShowShopMegaMenu] = useState(false);
 
     const handleScroll = () => {
         const offset = window.scrollY;
@@ -32,34 +36,89 @@ function Navbar() {
         navbarClasses.push('navBarWithAnnouncement');
     }
 
+    const showAboutMegaMenuHandler = () => {
+        setShowAboutMegaMenu(true);
+        setShowShopMegaMenu(false);
+    };
+
+    const showShopMegaMenuHandler = () => {
+        setShowShopMegaMenu(true);
+        setShowAboutMegaMenu(false);
+    };
+
+    const hideMegaMenusHandler = () => {
+        setShowAboutMegaMenu(false);
+        setShowShopMegaMenu(false);
+    };
 
     return (
         <div>
             { !scrolled &&
-                    <div className="AnnouncementBar px-6 py-3">
+                    <div className="AnnouncementBar px-6 py-3 ">
                         <div className="AnnouncementBar-Wrapper text-center">
-                            <p className="AnnouncementBar-Content font-bold text-sm tracking-widest">
+                            <p className="AnnouncementBar-Content font-bold text-sm tracking-widest whitespace-nowrap overflow-ellipsis">
                                 FREE SHIPPING FOR ALL ORDERS OVER <span className='loraBold'> $100 </span>
                             </p>
                         </div>
                     </div>
             }
-        <nav className={navbarClasses.join(" ")}>
-            <div className='navWrapper items-center justify-between'>
-            <div className='flex flex-row font-bold text-xlg tracking-widest justify-start'>
-            <div className='my-2 mx-6'>
-                <Link to="/all-products">SHOP</Link>
+        <nav className={navbarClasses.join(" ")} onMouseLeave={hideMegaMenusHandler}>
+            <div className='navWrapper flex flex-row items-center align-center justify-between relative'>
+            <div className='flex flex-row font-bold text-xlg tracking-widest items-center'>
+                <div className='my-2 mx-7 mobile-hidden'
+                     onMouseEnter={showShopMegaMenuHandler}
+                     >
+                    <div className='navLink'>
+                        <Link to="/all-products">SHOP</Link>
+                    </div>
+
+                    <div className={`MegaMenu ${showShopMegaMenu ? 'show' : ''}`}>
+                        <ul className="flex flex-row justify-around">
+                            <li>
+                                <Link to="/pages/category1">Category 1</Link>
+                            </li>
+                            <li>
+                                <Link to="/pages/category2">Category 2</Link>
+                            </li>
+                            <li>
+                                <Link to="/pages/category3">Category 3</Link>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            <div className='my-2 mx-7 mobile-hidden'
+                 onMouseEnter={showAboutMegaMenuHandler}
+                 >
+                <div className='navLink'>
+                    <Link to="/pages/story">ABOUT</Link>
+                </div>
+                <div className={`MegaMenu  ${showAboutMegaMenu ? 'show' : ''}`}>
+                    <ul className="flex flex-row justify-around">
+                        <li>
+                            <Link to="/pages/story">STORY</Link>
+                        </li>
+                        <li>
+                            <Link to="/pages/packaging">PACKAGING</Link>
+                        </li>
+                        <li>
+                            <Link to="/pages/planet">PLANET</Link>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div className='my-2 mx-6'>
-                <Link to="/pages/story">ABOUT</Link>
+                <div className='desktop-hidden tablet-hidden'>
+                    <img src={menuIcon} alt="Menu Icon" className='h-6 w-6'/>
+                </div>
             </div>
-            </div>
-                <div className="flex">
+                <div className="flex ">
+                    <div className=''>
                 <Link to="/">
-                    <img src={SiteIcon} alt="Site Icon " className='siteIcon' />
+                    <img src={desktopIcon} alt="desktop Icon " className='mobile-hidden desktopIcon' />
+                    <img src={mobileIcon} alt="mobile Icon " className='desktop-hidden tablet-hidden mobileIcon' />
                 </Link>
+                    </div>
             </div>
-            <div className='flex flex-row justify-end'>
+            <div className='flex flex-row '>
                 <div>
                     <img src={SearchIcon} alt="Search Icon" className='h-6 w-6'/>
                 </div>
