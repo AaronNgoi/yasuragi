@@ -447,7 +447,7 @@
 
 
 .newsletterBg .background {
-    background-image: url('./assets/site/matchaTile3.webp');
+    background-image: url('../assets/site/matchaTile3.webp');
     animation: focus-in 1.8s ease-out forwards;
     position: absolute;
     top: 0;

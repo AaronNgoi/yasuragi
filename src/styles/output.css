@@ -1464,7 +1464,7 @@ video {
 }
 
 .newsletterBg .background {
-  background-image: url('./assets/site/matchaTile3.webp');
+  background-image: url('../assets/site/matchaTile3.webp');
   -webkit-animation: focus-in 1.8s ease-out forwards;
           animation: focus-in 1.8s ease-out forwards;
   position: absolute;
