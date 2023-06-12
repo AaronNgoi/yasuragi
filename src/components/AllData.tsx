@@ -13,7 +13,7 @@ import genmaichaPowder from '../assets/tea/genmaichaPowder.webp';
 import genSenchaPour from '../assets/tea/genSenchaPour.webp';
 import genmaichaGlass from '../assets/tea/genmaichaGlass.webp';
 import genmaichaPackaging from '../assets/tea/genmaichaPackaging.webp';
-import GenmaichaPowderBG from '../assets/tea/GenmaichaPowderBG.webp';
+import genmaichaPowderBG from '../assets/tea/genmaichaPowderBG.webp';
 import genmaichaInfo from '../assets/tea/genmaichaInfo.webp';
 import senchaPowder from '../assets/tea/senchaPowder.webp';
 import senchaGlass from '../assets/tea/senchaGlass.webp';
@@ -49,22 +49,28 @@ import travelBottle7 from '../assets/accessories/travelBottle7.webp';
 import travelBottle8 from '../assets/accessories/travelBottle8.webp';
 
 
-interface Product {
+export interface Product {
     id: number;
-    type: 'tea' | 'accessories';
+    type: string;
     title: string;
     price: number;
     shortDescription: string;
     longDescription: string;
     img: string;
     otherImgs: string[];
-    ingredients: string[];
-    howToPrepare: { step: number; description: string }[];
+    ingredients?: string[];
+    howToPrepare?: { step: number; description: string }[];
     productSpecification: {
-        grams: number;
-        servings: number;
+        [key: string]: string | undefined;
     };
     careAndMaintenance: string;
+    reviews: {
+        id: number;
+        reviewer: string;
+        rating: number;
+        review: string;
+        date: string;
+    }[];
 }
 
 const products = [
@@ -138,8 +144,8 @@ const products = [
             }
         ],
         productSpecification: {
-            grams: 30,
-            servings: 15
+            grams: '30',
+            servings: '15'
         },
         careAndMaintenance: ''
 
@@ -194,8 +200,8 @@ const products = [
     }
     ],
         productSpecification: {
-            grams: 50,
-            servings: 25,
+            grams: '50',
+            servings: '25',
         },
         careAndMaintenance: '',
     },
@@ -244,8 +250,8 @@ const products = [
             }
         ],
         productSpecification: {
-            grams: 40,
-            servings: 20
+            grams: '40',
+            servings: '20'
         },
         careAndMaintenance: ''
     },
@@ -258,7 +264,7 @@ const products = [
         shortDescription: 'Indulge in the wholesome blend of our powdered genmaicha',
         longDescription: 'Indulge in the wholesome blend of our powdered genmaicha. This unique tea combines the rich flavors of sencha green tea with roasted brown rice, creating a delightful harmony of toasty and grassy notes. Made from high-quality tea leaves and roasted rice, our powdered genmaicha offers a convenient and versatile way to enjoy this classic tea. Whether you prefer it hot or cold, our powdered genmaicha is perfect for creating delicious matcha-infused beverages and adding depth to your culinary creations. Experience the soothing qualities of genmaicha and immerse yourself in the rich traditions of Japanese tea.',
         img: genmaichaPowder,
-        otherImgs: [genSenchaPour, genmaichaGlass, genmaichaPackaging, GenmaichaPowderBG, genmaichaInfo],
+        otherImgs: [genSenchaPour, genmaichaGlass, genmaichaPackaging, genmaichaPowderBG, genmaichaInfo],
         ingredients: ['Green tea leaves', 'Roasted rice'],
         howToPrepare: [
             { step: 1, description: 'Heat water to approximately 175°F (80°C).' },
@@ -320,8 +326,8 @@ const products = [
             }
         ],
         productSpecification: {
-            grams: 30,
-            servings: 15
+            grams: '30',
+            servings: '15'
         },
         careAndMaintenance: ''
     },
@@ -367,8 +373,8 @@ const products = [
             }
         ],
         productSpecification: {
-            grams: 50,
-            servings: 25
+            grams: '50',
+            servings: '25'
         },
         careAndMaintenance: ''
     },
@@ -377,7 +383,7 @@ const products = [
         id: 6,
         type: 'tea',
         title: 'Matcha Powder (Individually Packaged Sachets)',
-        price: 39.99,
+        price: 59.99,
         shortDescription: 'Convenient and portable matcha sachets for on-the-go enjoyment',
         longDescription: 'Our Matcha Powder in Individually Packaged Sachets provides a convenient and portable option for matcha lovers on the go. Each sachet contains a precise serving of our premium matcha, ensuring freshness and quality with every cup. The sachets are made from high-quality materials to preserve the flavor and aroma of the matcha. Whether you\'re traveling, at the office, or simply prefer the convenience of pre-measured servings, our Matcha Powder Sachets are the perfect choice for a quick and enjoyable matcha experience.',
         img: satchetMatchaTin,
@@ -409,8 +415,8 @@ const products = [
             }
         ],
         productSpecification: {
-            grams: 1.5,
-            servings: 1
+            grams: '40',
+            servings: '20'
         },
         careAndMaintenance: ''
     },
@@ -440,6 +446,8 @@ const products = [
                 date: '2023-06-09'
             }
         ],
+        ingredients: [],
+        howToPrepare: [],
         productSpecification: {
             capacity: '330ml',
             material: 'Ceramic',
@@ -474,7 +482,7 @@ const products = [
             {
                 id: 33,
                 reviewer: 'Michael Davis',
-                rating: 5,
+                rating: 4,
                 review: 'I absolutely love this bamboo matcha whisk! It creates a smooth and frothy matcha every time. The design is beautiful, and the quality is outstanding. It\'s a must-have for any matcha enthusiast!',
                 date: '2023-06-07'
             },
@@ -493,6 +501,8 @@ const products = [
                 date: '2023-06-03'
             }
             ],
+        ingredients: [],
+        howToPrepare: [],
         productSpecification: {
             length: '10cm',
             material: 'Bamboo',
@@ -543,6 +553,8 @@ const products = [
                 date: '2023-06-05'
             }
         ],
+        ingredients: [],
+        howToPrepare: [],
         productSpecification: {
             capacity: '400ml',
             weight: '245g',

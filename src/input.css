@@ -66,6 +66,7 @@
 .loraBold {
     font-family: 'Lora', serif;
     font-weight: 700;
+    letter-spacing: 0.025em;
 }
 
 .border-b {
@@ -406,7 +407,7 @@
     }
 }
 
-.blogAuthor {
+.lightBrown {
     color: #77593C;
 }
 
@@ -769,6 +770,7 @@
     top: 100%;
     background-color: #FCFAF4;
     opacity: 0;
+    display: none;
     overflow: auto;
     -ms-scroll-chaining: none;
     overscroll-behavior: contain;
@@ -780,6 +782,7 @@
 
 .MegaMenu.show {
     opacity: 1;
+    display: block;
 }
 
 .navLink {
@@ -801,4 +804,67 @@
 
 .navLink:hover::before {
     width: 100%;
+}
+
+.navPadding {
+    margin-top: 134px;
+    min-height: calc(100vh - 332px);
+}
+
+.pageHeader {
+    /*margin: 32px 0;*/
+    padding: 32px 0;
+}
+
+@media (min-width: 1025px) {
+    .pageHeader {
+        padding: 48px 0;
+    }
+}
+
+.reviewStar {
+    height:0.9375rem;
+    width:0.9375rem;
+    margin: 0.19rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 60px;
+    padding: 60px;
+}
+
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 40px;
+        padding: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+        padding: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+}
+
+.accordion-header {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    text-transform: uppercase;
+    align-items: center;
+    letter-spacing: 0.05em;
+    padding-top: 0.25rem;
+    text-align: center;
 }

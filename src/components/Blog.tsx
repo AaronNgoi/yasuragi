@@ -43,7 +43,7 @@ const Blog: React.FC = () => {
                         <img src={blog.src} alt={blog.title} className="blogImage"/>
                     </div>
                     <h2 className="text-lg font-bold mt-2">{blog.title}</h2>
-                    <p className="text-sm mt-1 text-gray-600 blogAuthor">{blog.author}</p>
+                    <p className="text-sm mt-1 text-gray-600 lightBrown">{blog.author}</p>
                     <p className="mt-2">{blog.description}</p>
                     <button className="mt-2 clickMore">Read more</button>
                 </div>

@@ -14,7 +14,7 @@ function Navbar() {
 
     const handleScroll = () => {
         const offset = window.scrollY;
-        if (offset > 1 ) {
+        if (offset > 40 ) {
             setScrolled(true);
         } else {
             setScrolled(false);
@@ -75,13 +75,13 @@ function Navbar() {
                     <div className={`MegaMenu ${showShopMegaMenu ? 'show' : ''}`}>
                         <ul className="flex flex-row justify-around">
                             <li>
-                                <Link to="/pages/category1">Category 1</Link>
+                                <Link to="/tea">Tea</Link>
                             </li>
                             <li>
-                                <Link to="/pages/category2">Category 2</Link>
+                                <Link to="/accessories">Accesories</Link>
                             </li>
                             <li>
-                                <Link to="/pages/category3">Category 3</Link>
+                                <Link to="/all-products">All Products</Link>
                             </li>
                         </ul>
                     </div>
