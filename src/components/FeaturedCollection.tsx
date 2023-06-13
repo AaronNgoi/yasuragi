@@ -14,7 +14,9 @@ const FeaturedCollection: React.FC = () => {
 
             <div className='featured-collection-images'>
                 {featuredProducts.map((product, index) => (
+                    <div className='featuredIndividualImage'>
                     <ProductItem key={product.id} product={product} imgClassName={`featured-img-${index}`} />
+                        </div>
                 ))}
             </div>
 

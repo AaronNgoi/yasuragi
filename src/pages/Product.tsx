@@ -9,6 +9,8 @@ import starHalf from '../assets/site/starHalf.svg';
 import starFull from '../assets/site/star.svg';
 import add from '../assets/site/add.svg';
 import minus from '../assets/site/minus.svg';
+import YouMayAlsoLike from "../components/YouMayAlsoLike";
+import Footer from "../components/Footer";
 
 
 
@@ -18,12 +20,14 @@ interface StarRatingProps {
 
 const ProductMobile: React.FC = () => {
     const { id } = useParams<{ id: string }>();
+    const currentProductId = parseInt(id || '', 10);
     const product = products.find((p) => p.id.toString() === id);
 
     const [ingredientsExpanded, setIngredientsExpanded] = useState(false);
     const [howToPrepareExpanded, setHowToPrepareExpanded] = useState(false);
     const [careAndMaintenanceExpanded, setCareAndMaintenanceExpanded] = useState(false);
     const [reviewsExpanded, setReviewsExpanded] = useState(false);
+    const [mainImage, setMainImage] = useState("");
 
     useEffect(() => {
         if (product) {
@@ -40,6 +44,12 @@ const ProductMobile: React.FC = () => {
                 fade: true,
 
             });
+        }
+    }, [product]);
+
+    useEffect(() => {
+        if (product) {
+            setMainImage(product.img); // Update mainImage here
         }
     }, [product]);
 
@@ -95,7 +105,7 @@ const ProductMobile: React.FC = () => {
 
     return (
         <div className='navPadding'>
-            <div className='mobileCarouselWrapper'>
+            <div className='mobileCarouselWrapper desktop-hidden'>
             <div className="carousel mobileProducts">
                 <div className="carousel-cell mobileProductImgCell">
                     <img className='mobileProductImg carouselImage' src={img} alt={title} />
@@ -107,10 +117,31 @@ const ProductMobile: React.FC = () => {
                 ))}
             </div>
             </div>
+            <div className='lg:flex lg:flex-row lg:mx-auto lgProductDesktopWidth'>
+                <div className='mobile-hidden tablet-hidden'>
+                    <div className="flex">
+                        <div className="thumbnailImages">
+                            <div className='thumbnail'>
+                            <img className="" src={img} alt={title} onClick={() => setMainImage(img)}/>
+                            </div>
+                            {otherImgs.map((image, index) => (
+                                <div className='thumbnail'>
+                                <img key={index} className="" src={image} alt={`Image ${index + 2}`} onClick={() => setMainImage(image)}/>
+                                </div>
+                            ))}
+                        </div>
+                        <div className="mainImage">
+                            <img className='mainProductImg' src={mainImage} alt={title} />
+                        </div>
+                    </div>
 
-            <div className='mobileDescription px-6'>
-            <h2 className="text-2xl uppercase items-center font-bold tracking-widest darkBrownFont py-1 text-center">{title}</h2>
-            <p className='darkBrownFont text-xl tracking-wide font-bold border-b pt-2 pb-3 text-center loraBold'>${price}</p>
+
+
+                </div>
+            <div className='flex flex-col moreInfoDesktopWidth'>
+            <div className='itemDescriptionAndButtons px-6'>
+            <h2 className="text-2xl uppercase items-center font-bold tracking-widest darkBrownFont py-1 text-center lg:text-left">{title}</h2>
+            <p className='darkBrownFont text-xl tracking-wide font-bold border-b pt-2 pb-3 text-center loraBold lg:py-2 lg:text-left'>${price}</p>
             <p className='py-4'>{shortDescription}</p>
             <p className='mb-6'>{longDescription}
 
@@ -138,7 +169,7 @@ const ProductMobile: React.FC = () => {
             {/* BUY IT NOW button */}
 
 
-            <div className='px-6'>
+            <div className='accordion-menus px-6 pb-6'>
             {ingredients && ingredients.length > 0 && (
                 <div>
                     <h3 onClick={toggleIngredients} className="accordion-header darkBrownFont">
@@ -237,7 +268,11 @@ const ProductMobile: React.FC = () => {
                     </div>
                 )}
             </div>
+            </div>
+            </div>
 
+        <YouMayAlsoLike currentProductId={currentProductId}/>
+            <Footer/>
         </div>
             );
             };

@@ -22,6 +22,8 @@ import satchetMatchaTin from '../assets/tea/satchetMatchaTin.webp';
 import satchetMatchaIndividual from '../assets/tea/satchetMatchaIndividual.webp';
 import satchetMatchaIndividual2 from '../assets/tea/satchetMatchaIndividual2.webp';
 import satchetMatchaIndividual3 from '../assets/tea/satchetMatchaIndividual3.webp';
+import wakochaPowder from '../assets/tea/wakochaPowder.webp';
+import wakochaPackaging from '../assets/tea/wakochaPackaging.webp';
 
 
 import cup1 from '../assets/accessories/cup1.webp';
@@ -47,6 +49,15 @@ import travelBottle5 from '../assets/accessories/travelBottle5.webp';
 import travelBottle6 from '../assets/accessories/travelBottle6.webp';
 import travelBottle7 from '../assets/accessories/travelBottle7.webp';
 import travelBottle8 from '../assets/accessories/travelBottle8.webp';
+import metalSpoon from '../assets/accessories/metalSpoon.webp';
+import metalSpoon2 from '../assets/accessories/metalSpoon2.webp';
+import metalSpoon3 from '../assets/accessories/metalSpoon3.webp';
+import metalSpoon4 from '../assets/accessories/metalSpoon4.webp';
+import metalSpoon5 from '../assets/accessories/metalSpoon5.webp';
+import thankYou from '../assets/accessories/thankYou.webp';
+import thankYou2 from '../assets/accessories/thankYou2.webp';
+import thankYou3 from '../assets/accessories/thankYou3.webp';
+import thankYou4 from '../assets/accessories/thankYou4.webp';
 
 
 export interface Product {
@@ -382,7 +393,84 @@ const products = [
     {
         id: 6,
         type: 'tea',
-        title: 'Matcha Powder (Individually Packaged Sachets)',
+        title: 'Powdered Wakocha',
+        price: 29.99,
+        shortDescription: 'Enjoy the robust, satisfying taste of our Organic Wakocha',
+        longDescription: 'Relish the robust flavor of our organic Wakocha - a finely powdered Japanese black tea. Harvested from organic tea plants in Japan, this tea brings out the full-bodied, earthy notes that black tea is known for, coupled with a subtle hint of sweetness. With 30 servings per pack, our Wakocha offers a versatile and convenient way to enjoy this distinctive tea. It can be prepared hot or cold, making it perfect for any occasion. Dive into the rich tradition of Japanese tea with our Wakocha.',
+        img: wakochaPowder,
+        otherImgs: [houjichaPour, houjichaGlass, wakochaPackaging, houjichaBottle],
+
+        ingredients: ['Organic Japanese Black Tea'],
+        howToPrepare: [
+            { step: 1, description: 'Heat water to approximately 195°F (90°C).' },
+            { step: 2, description: 'Sift 1 teaspoon of Wakocha into a bowl to remove any lumps.' },
+            { step: 3, description: 'Add a small amount of hot water (about 2 ounces) to the bowl.' },
+            { step: 4, description: 'Whisk the Wakocha vigorously using a bamboo whisk until it becomes frothy and well-mixed.' },
+            { step: 5, description: 'Pour the remaining hot water (about 6 ounces) into the bowl and continue whisking in a zigzag motion until fully combined.' },
+            { step: 6, description: 'Enjoy your Wakocha tea straight from the bowl or pour it into a cup for serving.' }
+        ],
+        reviews:[
+            {
+                id: 85,
+                reviewer: 'Haruki Yamada',
+                rating: 4,
+                review: 'この和紅茶は非常に風味があります。日本の黒茶の風味が楽しめ、甘さも適度です。',
+                date: '2023-06-11'
+            },
+            {
+                id: 86,
+                reviewer: 'Kyung-hee Park',
+                rating: 4,
+                review: 'The Wakocha has a deep, rich flavor. I enjoy the unique taste of this Japanese black tea.',
+                date: '2023-06-09'
+            },
+            {
+                id: 87,
+                reviewer: 'Ana Silva',
+                rating: 5,
+                review: 'I love the robust taste of the Wakocha. It has a satisfying and complex flavor.',
+                date: '2023-06-07'
+            },
+            {
+                id: 88,
+                reviewer: 'Vikram Gupta',
+                rating: 4.5,
+                review: 'The Wakocha has an intriguing and delightful taste. The flavor of Japanese black tea is outstanding.',
+                date: '2023-06-05'
+            },
+            {
+                id: 89,
+                reviewer: 'Noriko Saito',
+                rating: 4,
+                review: 'この和紅茶は非常に風味があり、味わい深いです。日本の黒茶の風味が楽しめます。',
+                date: '2023-06-03'
+            },
+            {
+                id: 90,
+                reviewer: 'Bulldog Hua',
+                rating: 2,
+                review: 'The Wakocha has a strange balance of flavors. I usually love the complex taste but this didn\'t do it for me.',
+                date: '2023-06-01'
+            },
+            {
+                id: 91,
+                reviewer: 'Nattapong Sombat',
+                rating: 4,
+                review: 'The aroma and flavor of this Wakocha are amazing. It brings back memories of enjoying tea in Japan.',
+                date: '2023-05-30'
+            }
+        ],
+        productSpecification: {
+            grams: '30',
+            servings: '30'
+        },
+        careAndMaintenance: 'To maintain the quality of the tea, avoid direct sunlight or humidity. Store in a cool, dry place.',
+    },
+
+    {
+        id: 7,
+        type: 'tea',
+        title: 'Powdered Matcha (Individually Packaged Sachets)',
         price: 59.99,
         shortDescription: 'Convenient and portable matcha sachets for on-the-go enjoyment',
         longDescription: 'Our Matcha Powder in Individually Packaged Sachets provides a convenient and portable option for matcha lovers on the go. Each sachet contains a precise serving of our premium matcha, ensuring freshness and quality with every cup. The sachets are made from high-quality materials to preserve the flavor and aroma of the matcha. Whether you\'re traveling, at the office, or simply prefer the convenience of pre-measured servings, our Matcha Powder Sachets are the perfect choice for a quick and enjoyable matcha experience.',
@@ -421,38 +509,54 @@ const products = [
         careAndMaintenance: ''
     },
 
+
     {
         id: 101,
         type: 'accessory',
-        title: 'Cup',
-        price: 29.99,
-        shortDescription: 'Enhance your tea experience with our elegant cup',
-        longDescription: 'Indulge in the pleasure of sipping your favorite tea from our exquisite cup. Crafted with attention to detail, this cup features a sleek design that enhances the visual appeal of your tea. Made from high-quality materials, it provides excellent heat retention, allowing you to enjoy your tea at the perfect temperature. With its comfortable handle and wide rim, our cup offers a delightful drinking experience. Elevate your tea rituals with our Cup accessory, available in black and white versions.',
-        img: cup1,
-        otherImgs: [cup2, cup3, cup4, cup5, cup6, cup7, cup8, cup9],
+        title: 'Metal Spoon',
+        price: 14.99,
+        shortDescription: 'A special 1gram metal spoon for your daily tea needs',
+        longDescription: 'Our Metal Spoon is perfect for measuring the perfect amount of your favorite teas. Crafted from high-quality stainless steel, this spoon is durable and resistant to corrosion.\n' +
+            '\n' +
+            'With its sleek and modern design, this spoon is not only functional but also adds an elegant touch to your tea collection. Whether you\'re brewing loose leaf tea or enjoying a cup of matcha, our Metal Spoon is an essential accessory for any tea enthusiast.',
+        img: metalSpoon,
+        otherImgs: [metalSpoon2, metalSpoon3, metalSpoon4, metalSpoon5],
         reviews: [
             {
-                id: 26,
-                reviewer: 'Emily Johnson',
-                rating: 5,
-                review: 'I adore this cup! It has a sleek and elegant design that adds a touch of sophistication to my tea time. The size is perfect, and the quality is exceptional. Highly recommended!',
-                date: '2023-06-11'
+                id: 51,
+                reviewer: 'Emily Smith',
+                rating: 4,
+                review: 'I love my Metal Spoon! It\'s sturdy and versatile. It\'s perfect for measuring and stirring my teas. The quality is excellent, and the design is stylish. Highly recommended!',
+                date: '2023-06-12'
             },
             {
-                id: 27,
-                reviewer: 'Daniel Garcia',
-                rating: 4,
-                review: 'The cup is a great addition to my tea collection. The craftsmanship is top-notch, and it feels comfortable to hold. The size is just right for a satisfying cup of tea. I\'m very pleased with my purchase!',
+                id: 52,
+                reviewer: 'Alexandra Chen',
+                rating: 5,
+                review: 'The Metal Spoon is a great addition to my tea collection. It\'s durable, easy to use, and has a sleek design. I find it very convenient for measuring and stirring. I\'m very satisfied with my purchase!',
                 date: '2023-06-09'
+            },
+            {
+                id: 53,
+                reviewer: 'Gabriel Johnson',
+                rating: 4,
+                review: 'I recently got the Metal Spoon, and it has become my go-to tool for tea preparation. It\'s reliable, and the quality is impressive. It\'s a must-have accessory for tea lovers!',
+                date: '2023-06-06'
+            },
+            {
+                id: 54,
+                reviewer: 'Sophia Thompson',
+                rating: 5,
+                review: 'The Metal Spoon is fantastic! It\'s versatile and makes measuring and stirring my teas effortless. The stainless steel construction ensures durability, and the design is sleek. I highly recommend it!',
+                date: '2023-06-02'
             }
         ],
-        ingredients: [],
-        howToPrepare: [],
         productSpecification: {
-            capacity: '330ml',
-            material: 'Ceramic',
+            length: '11.8cm',
+            width: '22mm',
+            material: 'Stainless steel',
         },
-        careAndMaintenance: 'Hand wash recommended. Do not use in the microwave or dishwasher.',
+        careAndMaintenance: 'After each use, rinse the spoon with warm water and mild soap. Avoid using abrasive cleaners or scrubbers that may damage the spoon. Dry it thoroughly before storage. The spoon is dishwasher safe, but handwashing is recommended for better longevity.',
     },
 
 
@@ -513,6 +617,40 @@ const products = [
     {
         id: 103,
         type: 'accessory',
+        title: 'Cup',
+        price: 29.99,
+        shortDescription: 'Enhance your tea experience with our elegant cup',
+        longDescription: 'Indulge in the pleasure of sipping your favorite tea from our exquisite cup. Crafted with attention to detail, this cup features a sleek design that enhances the visual appeal of your tea. Made from high-quality materials, it provides excellent heat retention, allowing you to enjoy your tea at the perfect temperature. With its comfortable handle and wide rim, our cup offers a delightful drinking experience. Elevate your tea rituals with our Cup accessory, available in black and white versions.',
+        img: cup1,
+        otherImgs: [cup2, cup3, cup4, cup5, cup6, cup7, cup8, cup9],
+        reviews: [
+            {
+                id: 26,
+                reviewer: 'Emily Johnson',
+                rating: 5,
+                review: 'I adore this cup! It has a sleek and elegant design that adds a touch of sophistication to my tea time. The size is perfect, and the quality is exceptional. Highly recommended!',
+                date: '2023-06-11'
+            },
+            {
+                id: 27,
+                reviewer: 'Daniel Garcia',
+                rating: 4,
+                review: 'The cup is a great addition to my tea collection. The craftsmanship is top-notch, and it feels comfortable to hold. The size is just right for a satisfying cup of tea. I\'m very pleased with my purchase!',
+                date: '2023-06-09'
+            }
+        ],
+        ingredients: [],
+        howToPrepare: [],
+        productSpecification: {
+            capacity: '330ml',
+            material: 'Ceramic',
+        },
+        careAndMaintenance: 'Hand wash recommended. Do not use in the microwave or dishwasher.',
+    },
+
+    {
+        id: 104,
+        type: 'accessory',
         title: 'Travel Tumbler',
         price: 39.99,
         shortDescription: 'Enjoy your matcha on the go with our Travel Tumbler',
@@ -562,7 +700,62 @@ const products = [
             color: 'Black, White',
         },
         careAndMaintenance: 'Before first use and after each use, wash the bottle with warm soapy water. Do not use abrasive cleaners or scrubbers as they may scratch the surface. Rinse thoroughly and let it air dry. The bottle is not suitable for hot liquids or dishwasher use. Avoid exposing the bottle to direct sunlight for extended periods.',
+    },
+
+    {
+        id: 105,
+        type: 'accessory',
+        title: 'Elegant Thank You Card',
+        price: 1,
+        shortDescription: 'Express your gratitude with our minimalist Japanese-inspired Thank You card',
+        longDescription: 'Convey your heartfelt thanks with our delicately designed Thank You card. Crafted from high-quality, sustainable paper, this card epitomizes clean Japanese aesthetics. The minimalist design, featuring a tasteful handwritten-style script, adds a serene and personal touch to your message. The understated, tranquil colors further enhance its elegant simplicity. Each card comes with a matching envelope, aligning with the overall minimalistic design. Make your message of appreciation resonate with our Japanese-inspired Thank You Card.',
+        img: thankYou,
+        otherImgs: [thankYou2, thankYou3, thankYou4],
+        reviews: [{
+            id: 61,
+            reviewer: 'Sam Harrison',
+            rating: 5,
+            review: 'This elegant Thank You card is just perfect! It looks classy and the paper quality is excellent. It comes with a matching envelope too. Very pleased with this purchase!',
+            date: '2023-06-11'
+        },
+            {
+                id: 62,
+                reviewer: 'Li Wei',
+                rating: 4,
+                review: '這款感謝卡非常漂亮！紙張質量非常好，並且附帶匹配的信封。我非常推薦它！',
+                date: '2023-06-09'
+            },
+            {
+                id: 63,
+                reviewer: 'Emily Smith',
+                rating: 4,
+                review: 'I adore this Thank You card! It\'s very elegant and high-quality. A great way to express gratitude to someone special.',
+                date: '2023-06-07'
+            },
+            {
+                id: 64,
+                reviewer: 'Paul Anderson',
+                rating: 5,
+                review: 'I\'m so impressed with this Thank You card! It\'s tastefully designed, durable, and the envelope matches perfectly. I highly recommend it!',
+                date: '2023-06-05'
+            },
+            {
+                id: 65,
+                reviewer: 'Zhang Mei',
+                rating: 4,
+                review: '这张感谢卡非常漂亮，非常有质感。它配有一个完美匹配的信封，我非常满意这次购买！',
+                date: '2023-06-03'
+            }
+        ],
+        productSpecification: {
+            dimensions: '14cm x 10cm',
+            material: 'High-quality paper',
+        },
+        careAndMaintenance: 'To maintain the quality of the card, avoid direct sunlight or humidity. Store in a cool, dry place.',
     }
+
+
+
 ];
 
 export default products;
