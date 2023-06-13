@@ -3,6 +3,7 @@ import facebook from '../assets/site/facebook.svg'
 import instagram from '../assets/site/instagram.svg'
 import tiktok from '../assets/site/tiktok.svg'
 import pinterest from '../assets/site/pinterest.svg'
+import { Link } from "react-router-dom";
 
 
 const Footer: React.FC = () => {
@@ -25,13 +26,13 @@ const Footer: React.FC = () => {
                 <h2 className="footer-section-header">ABOUT</h2>
                 <ul className="footer-section-list">
                     <li className="">
-                        <a className="section-link" href="#">SHIPPING & RETURNS</a>
+                        <Link to="/pages/shipping-returns" className="section-link">SHIPPING & RETURNS</Link>
                     </li>
                     <li className="">
-                        <a className="section-link" href="#">BLOG</a>
+                        <Link to="/pages/blog" className="section-link">BLOG</Link>
                     </li>
                     <li className="">
-                        <a className="section-link" href="#">CONTACT US</a>
+                        <Link to="/pages/contact-us" className="section-link">CONTACT US</Link>
                     </li>
                 </ul>
             </div>
@@ -39,10 +40,10 @@ const Footer: React.FC = () => {
                 <h2 className="footer-section-header">POLICIES</h2>
                 <ul className="">
                     <li className="">
-                        <a className="section-link" href="#">PRIVACY POLICY</a>
+                        <Link to="/pages/privacy-policy" className="section-link">PRIVACY POLICY</Link>
                     </li>
                     <li className="">
-                        <a className="section-link" href="#">TERMS &amp; CONDITIONS</a>
+                        <Link to="/pages/terms-conditions" className="section-link">TERMS &amp; CONDITIONS</Link>
                     </li>
                 </ul>
             </div>

@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { Link } from "react-router-dom";
 import Flickity from 'flickity';
 import HeroBG1 from '../assets/site/HeroBG1.webp';
 import HeroBG2 from '../assets/site/HeroBG2.webp';
@@ -35,7 +36,7 @@ const LandingPage: React.FC = () => {
                 <div className='HeroText'>
                     <div className='HeroSubHeader'>Experience the Purest Tradition with Our Ceremonial Grade Matcha</div>
                     <div className='HeroHeader'>CEREMONIAL GRADE MATCHA</div>
-                    <button className='HeroButton self-start'> DISCOVER MORE</button>
+                    <Link to='/products/1' className='HeroButton self-start'>DISCOVER MORE</Link>
                 </div>
             </div>
             <div className="carousel-cell">
@@ -43,7 +44,7 @@ const LandingPage: React.FC = () => {
                 <div className='HeroText2'>
                     <div className='HeroSubHeader'>Experience the Warm, Toasty Delight of Our Powdered Houjicha</div>
                     <div className='HeroHeader'>POWDERED HOUJICHA</div>
-                    <button className='HeroButtonLight self-end'> DISCOVER MORE</button>
+                    <Link to='/products/3' className='HeroButtonLight self-end'>DISCOVER MORE</Link>
                 </div>
             </div>
             <div className="carousel-cell">
@@ -51,7 +52,7 @@ const LandingPage: React.FC = () => {
                 <div className='HeroText3'>
                     <div className='HeroSubHeader'>Indulge in the Wholesome Blend of Our Powdered Genmaicha</div>
                     <div className='HeroHeader'>POWDERED GENMAICHA</div>
-                    <button className='HeroButtonLight self-start'> DISCOVER MORE</button>
+                    <Link to='/products/4' className='HeroButtonLight self-start'>DISCOVER MORE</Link>
                 </div>
             </div>
         </div>

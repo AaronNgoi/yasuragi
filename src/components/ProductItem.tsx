@@ -29,9 +29,10 @@ type ProductItemProps = {
             date: string;
         }[];
     };
+    imgClassName?: string;
 };
 
-const ProductItem: FC<ProductItemProps> = ({ product }) => {
+const ProductItem: FC<ProductItemProps> = ({ product, imgClassName }) => {
     const averageRating =
         product.reviews.reduce((total, review) => total + review.rating, 0) / product.reviews.length;
     const roundedRating = Math.ceil(averageRating * 2) / 2;
@@ -43,7 +44,7 @@ const ProductItem: FC<ProductItemProps> = ({ product }) => {
                 <img
                     src={product.img}
                     alt={product.title}
-                    className="object-cover cursor-pointer transition duration-300"
+                    className={`object-cover cursor-pointer transition duration-300 ${imgClassName}`}
                     onMouseEnter={(e) => {
                         e.currentTarget.src = product.otherImgs[0];
                     }}

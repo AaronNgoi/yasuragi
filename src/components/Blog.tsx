@@ -2,6 +2,7 @@ import React from 'react';
 import blogTranquility from '../assets/site/blogTranquility.webp';
 import blogBreath from '../assets/site/blogBreath.webp';
 import blogMeditation from '../assets/site/blogMeditation.webp';
+import { Link } from "react-router-dom";
 
 type BlogType = {
     src: string;
@@ -49,7 +50,7 @@ const Blog: React.FC = () => {
                 </div>
             ))}
         </div>
-                <button className="HeroButton mt-8">VIEW ALL ARTICLES</button>
+                <Link to='/pages/blog' className="HeroButton mt-8">VIEW ALL ARTICLES</Link>
             </div>
         </div>
     );

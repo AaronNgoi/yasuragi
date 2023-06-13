@@ -57,7 +57,7 @@ function Navbar() {
                     <div className="AnnouncementBar px-6 py-3 ">
                         <div className="AnnouncementBar-Wrapper text-center">
                             <p className="AnnouncementBar-Content font-bold text-sm tracking-widest whitespace-nowrap overflow-ellipsis">
-                                FREE SHIPPING FOR ALL ORDERS OVER <span className='loraBold'> $100 </span>
+                                FREE SHIPPING OVER <span className='loraBold'> $150 </span>
                             </p>
                         </div>
                     </div>

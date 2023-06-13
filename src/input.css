@@ -327,18 +327,26 @@
 }
 
 .featured-collection-images {
-    display: flex;
-    justify-content: space-around;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    width: 100%;
-    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 60px;
+    padding: 60px;
 }
 
-.featured-img-wrapper {
-    width: 100%;
-    height: auto;
-    margin: 1rem;
+@media (max-width: 1024px) {
+    .featured-collection-images {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 40px;
+        padding: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-collection-images {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 30px;
+        padding: 30px;
+    }
 }
 
 .featured-collection-images .featured-img-0 {
@@ -860,11 +868,70 @@
 }
 
 .accordion-header {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
+
     text-transform: uppercase;
     align-items: center;
     letter-spacing: 0.05em;
-    padding-top: 0.25rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
     text-align: center;
+    border-top: solid 1px #E5E4DF;
+}
+
+
+
+.accordion-content {
+    margin-top: 0.75rem;
+    margin-bottom: 2.5rem;
+}
+
+.accordion-toggle {
+}
+
+.form1Header {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    justify-content: center;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+}
+
+/*.form3Header {*/
+/*    font-size: 1.25rem;*/
+/*    line-height: 1.75rem;*/
+/*    text-transform: uppercase;*/
+/*    display: flex; !* items-center *!*/
+/*    justify-content: center; !* text-center *!*/
+/*    align-items: center; !* items-center *!*/
+/*    font-weight: bold; !* font-bold *!*/
+/*    letter-spacing: 0.1em; !* tracking-wider *!*/
+/*}*/
+
+.form3Header {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    text-transform: uppercase;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top:1rem;
+    /*text-align: center;*/
+    justify-content: center;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+}
+
+.formComponent {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 10px 20px 64px 20px;
+
+}
+
+@media (min-width: 768px) {
+    .formComponent {
+        padding: 10px 30px 64px 30px;
+    }
 }
