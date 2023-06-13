@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { useParams } from 'react-router-dom';
 import products, { Product } from '../components/AllData';
 import Flickity from 'flickity';
-import 'flickity/css/flickity.css';
+// import 'flickity/css/flickity.css';
 
 const ProductMobile = () => {
     const { id } = useParams<{ id: string }>();
@@ -13,22 +13,22 @@ const ProductMobile = () => {
     const [careAndMaintenanceExpanded, setCareAndMaintenanceExpanded] =
         useState(false);
 
-    React.useEffect(() => {
-        if (product) {
-            const flickityInstance = new Flickity('.carousel', {
-                prevNextButtons: false,
-                setGallerySize: false,
-                adaptiveHeight: true,
-                wrapAround: true,
-                dragThreshold: 15,
-                pauseAutoPlayOnHover: true,
-                autoPlay: 6000,
-                imagesLoaded: true,
-                cellSelector: '.carousel-cell',
-                fade: true,
-            });
-        }
-    }, [product]);
+    // React.useEffect(() => {
+    //     if (product) {
+    //         const flickityInstance = new Flickity('.carousel', {
+    //             prevNextButtons: false,
+    //             setGallerySize: false,
+    //             adaptiveHeight: true,
+    //             wrapAround: true,
+    //             dragThreshold: 15,
+    //             pauseAutoPlayOnHover: true,
+    //             autoPlay: 6000,
+    //             imagesLoaded: true,
+    //             cellSelector: '.carousel-cell',
+    //             fade: true,
+    //         });
+    //     }
+    // }, [product]);
 
     if (!product) {
         return <div>Product not found</div>;
@@ -63,16 +63,16 @@ const ProductMobile = () => {
 
     return (
         <div className='navPadding'>
-            <div className="carousel">
-                <div className="carousel-cell">
-                    <img src={img} alt={title} />
-                </div>
-                {otherImgs.map((image, index) => (
-                    <div key={index} className="carousel-cell">
-                        <img src={image} alt={`Image ${index + 2}`} />
-                    </div>
-                ))}
-            </div>
+            {/*<div className="carousel">*/}
+            {/*    <div className="carousel-cell">*/}
+            {/*        <img src={img} alt={title} />*/}
+            {/*    </div>*/}
+            {/*    {otherImgs.map((image, index) => (*/}
+            {/*        <div key={index} className="carousel-cell">*/}
+            {/*            <img src={image} alt={`Image ${index + 2}`} />*/}
+            {/*        </div>*/}
+            {/*    ))}*/}
+            {/*</div>*/}
 
             <div className='mobileDescription px-6'>
             <h2 className="text-2xl uppercase items-center font-bold tracking-widest darkBrownFont py-1 text-center">{title}</h2>
