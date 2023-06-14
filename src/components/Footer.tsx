@@ -3,10 +3,17 @@ import facebook from '../assets/site/facebook.svg'
 import instagram from '../assets/site/instagram.svg'
 import tiktok from '../assets/site/tiktok.svg'
 import pinterest from '../assets/site/pinterest.svg'
-import { Link } from "react-router-dom";
-
+import { Link, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
 const Footer: React.FC = () => {
+
+    const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
+
     return (
         <footer className="footer w-full">
             <div className="footer-section flex flex-col px-6">

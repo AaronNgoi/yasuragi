@@ -7,12 +7,14 @@ import Blog from "../components/Blog";
 import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import About from "../components/About";
+import ScrollToNewsButton from "../components/ScrollToNewsButton";
 
 const Home: React.FC = () => {
     return (
         <>
         <div className='flex flex-col'>
             <LandingPage />
+            {/*<ScrollToNewsButton/>*/}
             <News/>
         </div>
         <div className='flex flex-col items-center justify-center'>

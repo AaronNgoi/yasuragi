@@ -725,6 +725,10 @@ video {
   height: 1rem;
 }
 
+.h-5 {
+  height: 1.25rem;
+}
+
 .h-6 {
   height: 1.5rem;
 }
@@ -739,6 +743,10 @@ video {
 
 .w-4 {
   width: 1rem;
+}
+
+.w-5 {
+  width: 1.25rem;
 }
 
 .w-6 {
@@ -2124,6 +2132,64 @@ video {
   }
 }
 
+.bgOlive {
+  background-color: #837958;
+}
+
+.scroll-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  /*background-color: #your-color;*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.scroll-button-container {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /*padding-bottom: -48px; !* Adjust the padding as needed *!*/
+}
+
+/*.scroll-button:hover {*/
+
+/*    background-color: #your-hover-color;*/
+
+/*}*/
+
+.megaMenuShop {
+  display: flex;
+}
+
+.mega-menu-column {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.shopMegaHeader {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  text-transform: uppercase;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  /*text-align: center;*/
+  justify-content: center;
+  letter-spacing: 0.1em;
+}
+
+.shopMegaMenuLink {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .hover\:text-gray-700:hover {
     --tw-text-opacity: 1;
@@ -2199,4 +2265,3 @@ video {
     text-align: left;
   }
 }
-

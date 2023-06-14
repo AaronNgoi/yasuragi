@@ -6,6 +6,7 @@ import HeroBG2 from '../assets/site/HeroBG2.webp';
 import HeroBG3 from '../assets/site/HeroBG3.webp';
 import '../styles/flickity.css';
 import 'flickity-fade';
+import ScrollToNewsButton from "./ScrollToNewsButton";
 
 const LandingPage: React.FC = () => {
     const carouselRef = useRef<HTMLDivElement | null>(null);
@@ -30,6 +31,7 @@ const LandingPage: React.FC = () => {
 
 
     return (
+        <>
         <div ref={carouselRef} className="carousel main-bg">
             <div className="carousel-cell">
                 <img src={HeroBG1} alt="Bg Img 1" className='carouselImage'/>
@@ -56,6 +58,8 @@ const LandingPage: React.FC = () => {
                 </div>
             </div>
         </div>
+            <ScrollToNewsButton/>
+        </>
     );
 };
 
