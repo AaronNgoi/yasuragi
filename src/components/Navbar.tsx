@@ -89,8 +89,10 @@ function Navbar() {
             }
 
             {mobileMenuOpen && (
+                <>
+                    <div className="mobileNavMenuBackground" onClick={toggleMobileMenu}></div>
+
                 <div className="mobileNavMenuPopOut ">
-                    {/*<div className="mobileNavMenuBackground" onClick={toggleMobileMenu}></div>*/}
                     <div className="mobileNavMenuCloseIcon" onClick={toggleMobileMenu}>
                         <img src={CloseIcon} alt="Close Icon" className="h-5 w-5" />
                     </div>
@@ -135,7 +137,7 @@ function Navbar() {
                                         </li>
                                     ))}
 
-                                    <li><Link to="/all-products" className='my-2'>VIEW ALL</Link></li>
+                                    <li className='my-2'><Link to="/all-products">VIEW ALL</Link></li>
                                 </ul>
                             )}
                         </div>
@@ -160,6 +162,7 @@ function Navbar() {
                         </div>
                     </div>
                 </div>
+                </>
             )}
         <nav className={navbarClasses.join(" ")} onMouseLeave={hideMegaMenusHandler}>
             <div className='navWrapper flex flex-row items-center align-center justify-between relative'>

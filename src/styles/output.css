@@ -2243,21 +2243,16 @@ video {
   /* Adjust the z-index as needed */
 }
 
-/*.mobileNavMenuBackground {*/
-
-/*    position: fixed;*/
-
-/*    top: 0;*/
-
-/*    left: 0;*/
-
-/*    right: 0;*/
-
-/*    bottom: 0;*/
-
-/*    z-index: 1;*/
-
-/*}*/
+.mobileNavMenuBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 255;
+  opacity: 0.7;
+  background-color: #1C150E;
+}
 
 .mobile-accordion-menu {
   padding: 1rem;
