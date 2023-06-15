@@ -6,7 +6,7 @@ import SearchIcon from '../assets/site/searchIcon.svg';
 import CartIcon from '../assets/site/cartIcon.svg';
 import menuIcon from '../assets/site/menu.svg';
 import products from './AllData';
-import ProductItem from './ProductItem';
+import ProductPreview from './ProductPreview';
 
 
 function Navbar() {
@@ -79,11 +79,11 @@ function Navbar() {
                         <Link to="/all-products">SHOP</Link>
                     </div>
 
-                    <div className={`MegaMenu show ${showShopMegaMenu ? 'show' : ''}`}>
-                        <div className='megaMenuShop'>
+                    <div className={`MegaMenu ${showShopMegaMenu ? 'show' : ''}`}>
+                        <div className='megaMenuShop '>
 
                             <div className="mega-menu-column">
-                                <h3 className='shopMegaHeader text-lg'>Tea</h3>
+                                <Link to="/tea" className='shopMegaHeader'>Tea</Link>
                             <ul>
                                 {teaProducts.map((product) => (
                                     <li className='shopMegaMenuLink' key={product.id}>
@@ -94,10 +94,10 @@ function Navbar() {
                         </div>
 
                             <div className="mega-menu-column">
-                            <h3 className='shopMegaHeader '>Accessories</h3>
+                                    <Link to="/accessories" className='shopMegaHeader'>Accessories</Link>
                             <ul>
                                 {accessoryProducts.map((product) => (
-                                    <li key={product.id}>
+                                    <li className='shopMegaMenuLink' key={product.id}>
                                         <Link to={`/products/${product.id}`}>{product.title}</Link>
                                     </li>
                                 ))}
@@ -105,15 +105,23 @@ function Navbar() {
                         </div>
 
                             <div className="mega-menu-column">
-                                <Link to="/all-products">View All</Link>
+                                <Link to="/all-products" className='shopMegaHeader'>View All</Link>
                             </div>
 
                             <div className="mega-menu-column">
-                                {/* Product showcase 1 */}
+                                {products
+                                    .filter((product) => product.id === 1)
+                                    .map((product) => (
+                                        <ProductPreview key={product.id} product={product} />
+                                    ))}
                             </div>
 
                             <div className="mega-menu-column">
-                                {/* Product showcase 2 */}
+                                {products
+                                    .filter((product) => product.id === 3)
+                                    .map((product) => (
+                                        <ProductPreview key={product.id} product={product} />
+                                    ))}
                             </div>
 
 
