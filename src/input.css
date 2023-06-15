@@ -673,6 +673,10 @@
     /*justify-content: center;*/
 }
 
+/*.DarkGreen {*/
+/*    color:#333E19;*/
+/*}*/
+
 .AboutTextBlock {
     display: flex;
     flex-direction: column;
@@ -1072,4 +1076,46 @@
 .shopMegaHeader:hover,
 .shopMegaMenuLink:hover {
     text-decoration: underline;
+}
+
+.mobileNavMenuPopOut {
+
+}
+
+.mobileNavMenuPopOut {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    max-width: 500px;
+    min-width: 300px;
+    width: ;
+    background-color: #A3A672;
+    color: #fff; /* Text color */
+    z-index: 1000; /* Adjust the z-index as needed */
+}
+
+/*.mobileNavMenuBackground {*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    right: 0;*/
+/*    bottom: 0;*/
+/*    z-index: 1;*/
+/*}*/
+
+.mobile-accordion-menu {
+    padding: 1rem;
+}
+
+.mobileNavMenuCloseIcon {
+    /*position: absolute;*/
+    /*top: 1rem;*/
+    /*right: 1rem;*/
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.mobile-accordion-menu-item .accordion-header {
+    border-color: #1C150E;
 }
