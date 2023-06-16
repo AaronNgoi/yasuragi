@@ -80,7 +80,7 @@ const Benefits: React.FC = () => {
                 wrapAround: true,
                 dragThreshold: 15,
                 pauseAutoPlayOnHover: true,
-                // autoPlay: 4000,
+                autoPlay: 4000,
                 imagesLoaded: true,
                 cellSelector: '.NewsImage',
                     fade: true,

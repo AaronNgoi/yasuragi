@@ -56,7 +56,7 @@ const News: React.FC = () => {
                 wrapAround: true,
                 dragThreshold: 15,
                 pauseAutoPlayOnHover: true,
-                autoPlay: 6000,
+                autoPlay: 4000,
                 imagesLoaded: true,
                 cellSelector: '.NewsImage',
                 fade: true
@@ -66,7 +66,7 @@ const News: React.FC = () => {
 
     return (
         <div className='border-b news-section' id='news-section'>
-            <div className="container mx-auto pt-12 pb-20  lg:pt-24 lg:pb-24">
+            <div className="container mx-auto pt-10 pb-20  lg:pt-22 lg:pb-24">
             <div className="text-center text-xl py-4 lg:mb-8">YASURAGI IN THE NEWS</div>
             <div className="flex flex-row justify-around mobile-hidden tablet-hidden">
             {newsData.map((news, i) => (

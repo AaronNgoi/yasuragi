@@ -20,7 +20,7 @@ const LandingPage: React.FC = () => {
                 wrapAround: true,
                 dragThreshold: 15,
                 pauseAutoPlayOnHover: true,
-                autoPlay: 6000,
+                autoPlay: 5000,
                 imagesLoaded: true,
                 cellSelector: '.carousel-cell',
                 fade: true

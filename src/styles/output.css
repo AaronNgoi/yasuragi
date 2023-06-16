@@ -936,6 +936,10 @@ video {
   padding-top: 0.5rem;
 }
 
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
 .text-center {
   text-align: center;
 }
@@ -2151,23 +2155,19 @@ video {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  /*background-color: #your-color;*/
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.3s;
 }
 
 .scroll-button-container {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   width: 100%;
   display: flex;
   justify-content: center;
-  /*padding-bottom: -48px; !* Adjust the padding as needed *!*/
 }
 
 /*.scroll-button:hover {*/
