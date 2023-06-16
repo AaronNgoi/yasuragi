@@ -1198,12 +1198,14 @@
     top: 0;
     right: 0;
     bottom: 0;
-    max-width: 500px;
+    max-width: 600px;
     min-width: 300px;
     width: 80vw;
     background-color: #FCFAF4;
     z-index: 1000;
     border: solid 1px #E5E4DF;
+    overscroll-behavior: contain;
+    overflow-y: auto;
 }
 
 
@@ -1232,4 +1234,22 @@
 
 .shoppingCartPopOut.slideOut {
     animation: slideOut 0.5s forwards;
+}
+
+
+@media (min-width: 1025px) {
+    .shoppingCartItemSplit > *:nth-child(1) {
+        flex: 0 0
+
+    }
+
+    .shoppingCartItemSplit > *:nth-child(2) {
+        flex: 1 1 40%
+
+    }
+
+    .shoppingCartItemSplit > *:nth-child(3) {
+        flex: 0 0 33%
+
+    }
 }

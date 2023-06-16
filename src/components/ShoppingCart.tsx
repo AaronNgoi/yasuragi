@@ -38,9 +38,9 @@ const ShoppingCartItem: React.FC<ShoppingCartItemProps> = ({ product, quantity }
     };
 
     return (
-        <div className="border-b py-4 flex flex-row flex-wrap items-center justify-between">
+        <div className="shoppingCartItemSplit border-b py-4 flex flex-col lg:flex-row flex-wrap items-center justify-between text-center lg:text-left">
             <img src={product.img} alt={product.title} className="w-20 h-20 mr-4" />
-            <div className='mr-4'>
+            <div className='lg:mr-4 pb-2 items-center justify-center lg:items-start lg:justify-start'>
                 <h3 className="font-bold text-lg">{product.title}</h3>
                 <p>Quantity: {quantity}</p>
                 <p>Price: ${totalPrice.toFixed(2)}</p>
@@ -100,7 +100,7 @@ const ShoppingCart: React.FC = () => {
             </p>
 
             {itemsWithDetails.length === 0 ? (
-                <p>Your cart is empty</p>
+                <p className='px-6'>Your cart is empty</p>
             ) : (
                 <div className="px-6">
                     {itemsWithDetails.map((item, index: number) => (
