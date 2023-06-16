@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import mobileIcon from '../assets/site/YasuragiMobileLogo.webp';
 import desktopIcon from '../assets/site/YausragiDesktopLogo.webp';
@@ -10,6 +10,10 @@ import add from '../assets/site/add.svg';
 import minus from '../assets/site/minus.svg';
 import products from './AllData';
 import ProductPreview from './ProductPreview';
+import ShoppingCart from "./ShoppingCart";
+import { CartContext, CartContextValue, CartItem } from '../utils/CartContext';
+
+
 
 
 function Navbar() {
@@ -22,14 +26,6 @@ function Navbar() {
     const [mobileAccessoriesMenuOpen, setMobileAccessoriesMenuOpen] = useState(false);
     const [showSearchOpen, setShowSearchOpen] = useState(false);
 
-    const handleScroll = () => {
-        const offset = window.scrollY;
-        if (offset > 40 ) {
-            setScrolled(true);
-        } else {
-            setScrolled(false);
-        }
-    }
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll)
@@ -44,6 +40,24 @@ function Navbar() {
     }
     if (!scrolled) {
         navbarClasses.push('navBarWithAnnouncement');
+    }
+
+    const cartContext = useContext(CartContext);
+
+    if (!cartContext) {
+        return <div>Cart context not available</div>;
+    }
+
+    const { toggleShoppingCartOpen, shoppingCartOpen, closeShoppingCartOpen } = cartContext;
+
+
+    const handleScroll = () => {
+        const offset = window.scrollY;
+        if (offset > 40 ) {
+            setScrolled(true);
+        } else {
+            setScrolled(false);
+        }
     }
 
     const showAboutMegaMenuHandler = () => {
@@ -82,11 +96,13 @@ function Navbar() {
     };
 
 
+
     const teaProducts = products.filter((product) => product.type === 'tea');
     const accessoryProducts = products.filter((product) => product.type === 'accessory');
 
     return (
         <div>
+
             { !scrolled &&
                     <div className="AnnouncementBar px-6 py-3 ">
                         <div className="AnnouncementBar-Wrapper text-center">
@@ -291,7 +307,11 @@ function Navbar() {
 
                 </div>
                 <div className='ml-6'>
-                    <img src={CartIcon} alt="Cart Icon" className='h-6 w-6 '/>
+                    <img src={CartIcon} alt="Cart Icon" className='h-6 w-6 ' onClick={toggleShoppingCartOpen}/>
+
+                    { shoppingCartOpen &&
+                        <ShoppingCart/>
+                    }
                 </div>
             </div>
             </div>

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import { useParams } from 'react-router-dom';
 import products, { Product } from '../components/AllData';
 import Flickity from 'flickity';
@@ -11,6 +11,7 @@ import add from '../assets/site/add.svg';
 import minus from '../assets/site/minus.svg';
 import YouMayAlsoLike from "../components/YouMayAlsoLike";
 import Footer from "../components/Footer";
+import { CartContext } from '../utils/CartContext';
 
 
 
@@ -18,7 +19,7 @@ interface StarRatingProps {
     rating: number;
 }
 
-const ProductMobile: React.FC = () => {
+const ProductComponent: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const currentProductId = parseInt(id || '', 10);
     const product = products.find((p) => p.id.toString() === id);
@@ -28,6 +29,12 @@ const ProductMobile: React.FC = () => {
     const [careAndMaintenanceExpanded, setCareAndMaintenanceExpanded] = useState(false);
     const [reviewsExpanded, setReviewsExpanded] = useState(false);
     const [mainImage, setMainImage] = useState("");
+    const [counter, setCounter] = useState(1);
+    const context = React.useContext(CartContext);
+
+    const handleAddToCart = () => {
+        context?.updateItemQuantity(currentProductId, counter);
+    }
 
     useEffect(() => {
         if (product) {
@@ -88,6 +95,15 @@ const ProductMobile: React.FC = () => {
         setReviewsExpanded(!reviewsExpanded);
     };
 
+    const incrementCounter = () => {
+        setCounter(prevCounter => prevCounter + 1);
+    };
+
+    const decrementCounter = () => {
+        if (counter > 1) {
+            setCounter(prevCounter => prevCounter - 1);
+        }
+    };
 
     const StarRating: React.FC<StarRatingProps> = ({ rating }) => {
         let stars = [];
@@ -102,6 +118,7 @@ const ProductMobile: React.FC = () => {
         }
         return <div className='flex items-center'>{stars}</div>;
     };
+
 
     return (
         <div className='navPadding'>
@@ -162,12 +179,25 @@ const ProductMobile: React.FC = () => {
             </p>
             </div>
 
+                <div className='flex flex-col px-6'>
             {/* Number State Counter + */}
+                    <div className="counter border inline-flex items-center justify-start">
+                    <button className="counterBtn flex-shrink-0 py-4 px-8" onClick={decrementCounter}>
+                        <img className='h-5 w-5' src={minus} alt="Decrease" />
+                    </button>
+                    <span className="counterValue py-4 px-4 text-lg flex-shrink-0 loraFont">{counter}</span>
+                    <button className="counterBtn flex-shrink-0 py-4 px-8" onClick={incrementCounter}>
+                        <img className='h-5 w-5 ' src={add} alt="Increase" />
+                    </button>
+                </div>
             {/* ADD TO CART button */}
-
+                    <button className="HeroButton text-lg my-6 addToCartBtn" onClick={handleAddToCart}>
+                        ADD TO CART
+                    </button>
 
             {/* BUY IT NOW button */}
 
+                </div>
 
             <div className='accordion-menus px-6 pb-6'>
             {ingredients && ingredients.length > 0 && (
@@ -277,4 +307,4 @@ const ProductMobile: React.FC = () => {
             );
             };
 
-            export default ProductMobile;
+            export default ProductComponent;

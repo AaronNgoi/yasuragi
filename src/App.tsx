@@ -10,15 +10,17 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 import Product from './pages/Product';
 import BlogPage from './pages/BlogPage';
-// import Story from './pages/Story';
-// import Packaging from './pages/Packaging';
-// import Planet from './pages/Planet';
+import Story from './pages/Story';
+import Packaging from './pages/Packaging';
+import Planet from './pages/Planet';
 import Navbar from './components/Navbar';
 import './styles/output.css';
-// import Footer from "./components/Footer";
+import { CartProvider } from './utils/CartContext';
+
 
 function App() {
   return (
+      <CartProvider>
       <Router>
           <div className="">
           <Navbar />
@@ -31,14 +33,15 @@ function App() {
           <Route path="/pages/privacy-policy" Component={PrivacyPolicy} />
           <Route path="/pages/terms-conditions" Component={TermsConditions} />
           <Route path="/products/:id" Component={Product} />
-            <Route path="/pages/blog" Component={BlogPage} />
-            {/*<Route path="/pages/story" Component={Story} />*/}
-          {/*<Route path="/pages/packaging" Component={Packaging} />*/}
-          {/*<Route path="/pages/planet" Component={Planet} />*/}
+          <Route path="/pages/blog" Component={BlogPage} />
+          <Route path="/pages/story" Component={Story} />
+          <Route path="/pages/packaging" Component={Packaging} />
+          <Route path="/pages/planet" Component={Planet} />
           <Route path="/" Component={Home} />
         </Routes>
           </div>
       </Router>
+      </CartProvider>
   );
 }
 

@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import { Link } from 'react-router-dom';
 import tradition from '../assets/site/storyTradition.webp'
 import packaging from '../assets/site/storyPackaging.webp'
 import planet from '../assets/site/storyPlanet.webp'
@@ -70,7 +71,10 @@ const About: React.FC = () => {
                 <h3 className=" font-bold uppercase tracking-widest py-1 mb-3">{activeData?.subText}</h3>
                     <h1 className=" font-bold AboutMainText AboutGreen py-1 mb-3">{activeData?.mainText}</h1>
                     <p className='mb-6'>  {activeData?.paragraph}</p>
-                    <p className="AboutGreen underline font-bold ">Discover More</p>
+                    <p className="AboutGreen underline font-bold ">
+                        <Link to={`/pages/${activeData?.name}`}>
+                            Discover More
+                        </Link></p>
                 </div>
             </div>
 
@@ -84,7 +88,9 @@ const About: React.FC = () => {
                 <h3 className="font-bold uppercase tracking-widest py-1 mb-3">{activeData?.subText}</h3>
                 <h1 className="font-bold AboutMainText AboutGreen py-1 mb-3">{activeData?.mainText}</h1>
                 <p className="mb-6">{activeData?.paragraph}</p>
-                <p className="AboutGreen underline font-bold">Discover More</p>
+                <p className="AboutGreen underline font-bold"><Link to={`/pages/${activeData?.name}`}>
+                    Discover More
+                </Link></p>
                 </div>
             </div>
             <div className="wow  AboutBgWrapper" style={{ backgroundImage: `url(${activeData?.src})` }}>

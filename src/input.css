@@ -69,6 +69,10 @@
     letter-spacing: 0.025em;
 }
 
+.border-all {
+    border: solid 1px #E5E4DF;
+}
+
 .border-b {
     border-bottom: solid 1px #E5E4DF;
 }
@@ -951,6 +955,20 @@
     }
 }
 
+.formStoryComponent {
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 10px 20px 64px 20px;
+
+}
+
+@media (min-width: 768px) {
+    .formStoryComponent {
+        padding: 10px 30px 64px 30px;
+    }
+}
+
 .thumbnailImages {
     display: flex;
     flex-direction: column;
@@ -1132,3 +1150,86 @@
     z-index: 1;
 }
 
+.counter {
+    width: fit-content;
+}
+
+
+.addToCartBtn.HeroButton {
+    color: #F9F4ED;
+    background-color: #545324;
+    padding: 16px 32px;
+    letter-spacing: 2px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    z-index: 30;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+}
+
+.addToCartBtn.HeroButton:hover {
+    color: #545324;
+    background-color: transparent;
+    font-weight: 600;
+}
+
+.addToCartBtn.HeroButton:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: -100%;
+    left: 0;
+    background: #545324;
+    opacity: 0.2;
+    transition: all 2s ease-in-out;
+}
+
+
+.addToCartBtn.HeroButton:hover:before {
+    bottom: 0;
+}
+
+.shoppingCartPopOut {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 500px;
+    min-width: 300px;
+    width: 80vw;
+    background-color: #FCFAF4;
+    z-index: 1000;
+    border: solid 1px #E5E4DF;
+}
+
+
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.shoppingCartPopOut.slideIn {
+    animation: slideIn 0.5s forwards;
+}
+
+.shoppingCartPopOut.slideOut {
+    animation: slideOut 0.5s forwards;
+}

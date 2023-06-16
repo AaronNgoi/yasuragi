@@ -84,7 +84,7 @@ export interface Product {
     }[];
 }
 
-const products = [
+export const products = [
     {
         id: 1,
         type: 'tea',
