@@ -20,6 +20,7 @@ function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [mobileTeaMenuOpen, setMobileTeaMenuOpen] = useState(false);
     const [mobileAccessoriesMenuOpen, setMobileAccessoriesMenuOpen] = useState(false);
+    const [showSearchOpen, setShowSearchOpen] = useState(false);
 
     const handleScroll = () => {
         const offset = window.scrollY;
@@ -64,12 +65,20 @@ function Navbar() {
         setMobileMenuOpen(!mobileMenuOpen);
     };
 
+    const closeMobileMenu = () => {
+        setMobileMenuOpen(false);
+    };
+
     const toggleMobileTeaMenu = () => {
         setMobileTeaMenuOpen(!mobileTeaMenuOpen);
     };
 
     const toggleMobileAccessoriesMenu = () => {
         setMobileAccessoriesMenuOpen(!mobileAccessoriesMenuOpen);
+    };
+
+    const toggleShowSearchOpen = () => {
+        setShowSearchOpen(!showSearchOpen);
     };
 
 
@@ -118,7 +127,7 @@ function Navbar() {
 
                                     {mobileTeaMenuOpen && teaProducts.map((product) => (
                                         <li className='shopMegaMenuLink' key={product.id}>
-                                            <Link to={`/products/${product.id}`}>{product.title}</Link>
+                                            <Link to={`/products/${product.id}`} onClick={closeMobileMenu}>{product.title}</Link>
                                         </li>
                                     ))}
 
@@ -133,11 +142,11 @@ function Navbar() {
 
                                     {mobileAccessoriesMenuOpen && accessoryProducts.map((product) => (
                                         <li className='shopMegaMenuLink' key={product.id}>
-                                            <Link to={`/products/${product.id}`}>{product.title}</Link>
+                                            <Link to={`/products/${product.id}`} onClick={closeMobileMenu} >{product.title}</Link>
                                         </li>
                                     ))}
 
-                                    <li className='my-2'><Link to="/all-products">VIEW ALL</Link></li>
+                                    <li className='my-2'><Link to="/all-products" onClick={closeMobileMenu}>VIEW ALL</Link></li>
                                 </ul>
                             )}
                         </div>
@@ -153,9 +162,9 @@ function Navbar() {
                             {showAboutMegaMenu && (
                                 <div className="accordion-content">
                                     <ul className="flex flex-col ">
-                                        <li><Link to="/pages/story">STORY</Link></li>
-                                        <li><Link to="/pages/packaging">PACKAGING</Link></li>
-                                        <li><Link to="/pages/planet">PLANET</Link></li>
+                                        <li><Link to="/pages/story" onClick={closeMobileMenu}>STORY</Link></li>
+                                        <li><Link to="/pages/packaging" onClick={closeMobileMenu}>PACKAGING</Link></li>
+                                        <li><Link to="/pages/planet" onClick={closeMobileMenu}>PLANET</Link></li>
                                     </ul>
                                 </div>
                             )}
@@ -178,32 +187,32 @@ function Navbar() {
                         <div className='megaMenuShop '>
 
                             <div className="mega-menu-column">
-                                <Link to="/tea" className='shopMegaHeader'>Tea</Link>
+                                <Link to="/tea" className='shopMegaHeader' onClick={hideMegaMenusHandler}>Tea</Link>
                             <ul>
                                 {teaProducts.map((product) => (
                                     <li className='shopMegaMenuLink' key={product.id}>
-                                        <Link to={`/products/${product.id}`}>{product.title}</Link>
+                                        <Link to={`/products/${product.id}`}  onClick={hideMegaMenusHandler}>{product.title}</Link>
                                     </li>
                                 ))}
                             </ul>
                         </div>
 
                             <div className="mega-menu-column">
-                                    <Link to="/accessories" className='shopMegaHeader'>Accessories</Link>
+                                    <Link to="/accessories" className='shopMegaHeader'  onClick={hideMegaMenusHandler}>Accessories</Link>
                             <ul>
                                 {accessoryProducts.map((product) => (
                                     <li className='shopMegaMenuLink' key={product.id}>
-                                        <Link to={`/products/${product.id}`}>{product.title}</Link>
+                                        <Link to={`/products/${product.id}`}  onClick={hideMegaMenusHandler}>{product.title}</Link>
                                     </li>
                                 ))}
                             </ul>
                         </div>
 
                             <div className="mega-menu-column">
-                                <Link to="/all-products" className='shopMegaHeader'>View All</Link>
+                                <Link to="/all-products" className='shopMegaHeader'  onClick={hideMegaMenusHandler}>View All</Link>
                             </div>
 
-                            <div className="mega-menu-column">
+                            <div className="mega-menu-column"  onClick={hideMegaMenusHandler}>
                                 {products
                                     .filter((product) => product.id === 1)
                                     .map((product) => (
@@ -211,7 +220,7 @@ function Navbar() {
                                     ))}
                             </div>
 
-                            <div className="mega-menu-column">
+                            <div className="mega-menu-column"  onClick={hideMegaMenusHandler}>
                                 {products
                                     .filter((product) => product.id === 3)
                                     .map((product) => (
@@ -229,16 +238,16 @@ function Navbar() {
                 <div className='navLink font-bold'>
                     <Link to="/pages/story">ABOUT</Link>
                 </div>
-                <div className={`MegaMenu  ${showAboutMegaMenu ? 'show' : ''}`}>
+                <div className={`MegaMenu ${showAboutMegaMenu ? 'show' : ''}`}>
                     <ul className="flex flex-row justify-around">
                         <li>
-                            <Link to="/pages/story">STORY</Link>
+                            <Link to="/pages/story"  onClick={hideMegaMenusHandler}>STORY</Link>
                         </li>
                         <li>
-                            <Link to="/pages/packaging">PACKAGING</Link>
+                            <Link to="/pages/packaging"  onClick={hideMegaMenusHandler}>PACKAGING</Link>
                         </li>
                         <li>
-                            <Link to="/pages/planet">PLANET</Link>
+                            <Link to="/pages/planet"  onClick={hideMegaMenusHandler}>PLANET</Link>
                         </li>
                     </ul>
                 </div>
@@ -261,7 +270,25 @@ function Navbar() {
             </div>
             <div className='flex flex-row '>
                 <div>
-                    <img src={SearchIcon} alt="Search Icon" className='h-6 w-6'/>
+                    <img src={SearchIcon} alt="Search Icon" className='h-6 w-6' onClick={toggleShowSearchOpen}/>
+
+
+                    <div className={`MegaMenu ${showSearchOpen ? 'show' : ''}`}>
+                        <ul className="flex flex-row justify-between z-10">
+                            <div className='flex flex-row px-4 md:pl-8 lg:py-2 lg:pl-12'>
+                                <img src={SearchIcon} alt="Search Icon" className='h-6 w-6 mr-4' onClick={toggleShowSearchOpen}/>
+                                <input type="text" placeholder="SEARCH..." className="search-input"/>
+                            </div>
+                            <div className="px-4 lg:py-2 md:pr-8 lg:pr-12 flex items-center justify-center" onClick={toggleShowSearchOpen}>
+                                <img src={CloseIcon} alt="Close Icon" className="h-4 w-4" />
+                            </div>
+                        </ul>
+                    </div>
+
+                    {showSearchOpen &&
+                        <div className="searchCloseBackground" onClick={toggleShowSearchOpen}></div>
+                    }
+
                 </div>
                 <div className='ml-6'>
                     <img src={CartIcon} alt="Cart Icon" className='h-6 w-6 '/>

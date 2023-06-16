@@ -798,13 +798,14 @@
     overscroll-behavior: contain;
     text-align: left;
     border-bottom: solid 1px #E5E4DF;
-    transition: all .3s ease-in-out;
+    transition: all .6s ease-in-out;
     z-index: 200;
 }
 
 .MegaMenu.show {
     opacity: 1;
     display: block;
+    transition: all .6s ease-in-out;
 }
 
 .navLink {
@@ -1089,7 +1090,7 @@
     bottom: 0;
     max-width: 500px;
     min-width: 300px;
-    width: ;
+    width: 80vw;
     background-color: #A3A672;
     color: #fff; /* Text color */
     z-index: 1000; /* Adjust the z-index as needed */
@@ -1121,3 +1122,18 @@
 .mobile-accordion-menu-item .accordion-header {
     border-color: #1C150E;
 }
+
+.search-input {
+    background-color: #FCFAF4;
+}
+
+
+.searchCloseBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
