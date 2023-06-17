@@ -2211,6 +2211,10 @@ video {
   margin: 0;
 }
 
+.selectedThumbnail {
+  border: 2px solid #A3A672;
+}
+
 @media (min-width: 1025px) {
   .moreInfoDesktopWidth {
     max-width: 35vw;

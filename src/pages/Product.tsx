@@ -30,6 +30,7 @@ const ProductComponent: React.FC = () => {
     const [reviewsExpanded, setReviewsExpanded] = useState(false);
     const [mainImage, setMainImage] = useState("");
     const [counter, setCounter] = useState(1);
+    const [selectedImageIndex, setSelectedImageIndex] = useState(0);
     const context = React.useContext(CartContext);
 
     const handleAddToCart = () => {
@@ -139,11 +140,17 @@ const ProductComponent: React.FC = () => {
                     <div className="flex">
                         <div className="thumbnailImages">
                             <div className='thumbnail'>
-                            <img className="" src={img} alt={title} onClick={() => setMainImage(img)}/>
+                            <img key={0} src={img} alt={title} className={selectedImageIndex === 0 ? 'selectedThumbnail' : ''} onClick={() => {
+                                setMainImage(img);
+                                setSelectedImageIndex(0);
+                            }}/>
                             </div>
                             {otherImgs.map((image, index) => (
                                 <div className='thumbnail'>
-                                <img key={index} className="" src={image} alt={`Image ${index + 2}`} onClick={() => setMainImage(image)}/>
+                                <img key={index+1} src={image} alt={`Image ${index + 2}`} className={selectedImageIndex === index + 1 ? 'selectedThumbnail' : ''} onClick={() => {
+                                    setMainImage(image);
+                                    setSelectedImageIndex(index + 1 );
+                                }}/>
                                 </div>
                             ))}
                         </div>
@@ -194,8 +201,6 @@ const ProductComponent: React.FC = () => {
                     <button className="HeroButton text-lg my-6 addToCartBtn" onClick={handleAddToCart}>
                         ADD TO CART
                     </button>
-
-            {/* BUY IT NOW button */}
 
                 </div>
 
